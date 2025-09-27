@@ -72,6 +72,9 @@ export default function ListingDetailPage({
   const [mapInputValue, setMapInputValue] = useState('');
   
   // VIP Transfer Extra Fields
+  const [transferDirection, setTransferDirection] = useState<'one-way' | 'round-trip'>('one-way');
+  const [returnDate, setReturnDate] = useState('');
+  const [returnTime, setReturnTime] = useState('');
   const [luggageCount, setLuggageCount] = useState(0);
   const [childSeats, setChildSeats] = useState(0);
   const [specialWelcome, setSpecialWelcome] = useState<{flowers: boolean, champagne: boolean}>({flowers: false, champagne: false});
@@ -543,13 +546,406 @@ export default function ListingDetailPage({
       </div>
 
       <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Mobil Layout */}
+        <div className="lg:hidden space-y-6">
+          {/* Resim Galerisi - Mobil */}
+          {listing.images && listing.images.length > 0 && (
+            <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+              <div className="aspect-[3/2] bg-gray-200">
+                <img
+                  src={listing.images[selectedImages]}
+                  alt={title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {listing.images.length > 1 && (
+                <div className="p-4">
+                  <div className="grid grid-cols-4 gap-2">
+                    {listing.images.slice(0, 4).map((image, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setSelectedImages(index)}
+                        className={`aspect-square rounded-lg overflow-hidden border-2 ${
+                          selectedImages === index ? 'border-blue-500' : 'border-gray-200'
+                        }`}
+                      >
+                        <img
+                          src={image}
+                          alt={`${title} ${index + 1}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Özellikler - Mobil */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">{t('features')}</h2>
+            <p className="text-gray-700">{featuresText}</p>
+            
+            {listing.features && listing.features.length > 0 && (
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                {listing.features.map((feature, index) => (
+                  <div key={index} className="flex items-center space-x-2 text-sm text-gray-600">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                    <span className="capitalize">{feature.replace('_', ' ')}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Rezervasyon - Mobil */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <div className="mb-6">
+              {currentService === 'boat-rental' ? (
+                // Tekne için fiyat gösterimi
+                <>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-2xl font-bold text-gray-900">
+                      {Math.round(listing.price_per_day * 0.6)} TRY
+                    </span>
+                    <span className="text-gray-500">/ Yarım Gün</span>
+                  </div>
+                  <div className="text-sm text-gray-600 mb-2">
+                    Tam Gün: {listing.price_per_day} TRY
+                  </div>
+                  <div className="text-xs text-gray-500">
+                    • Sabah turu: 5 saat (10:00-15:00)<br/>
+                    • Akşam turu: 4 saat (16:00-20:00)<br/>
+                    • Tam gün turu: 10 saat
+                  </div>
+                </>
+              ) : currentService === 'properties-for-sale' ? (
+                // Emlak satış için fiyat gösterimi
+                <>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-2xl font-bold text-gray-900">
+                      {listing.price_per_day?.toLocaleString()} TRY
+                    </span>
+                    <span className="text-gray-500">Satış Fiyatı</span>
+                  </div>
+                  {listing.price_per_week && (
+                    <div className="text-sm text-gray-600">
+                      m² Fiyatı: {Math.round(listing.price_per_day / (listing.price_per_week || 100))?.toLocaleString()} TRY
+                    </div>
+                  )}
+                  <div className="text-xs text-gray-500 mt-2">
+                    • Fiyat görüşmeye açıktır<br/>
+                    • Krediye uygun<br/>
+                    • Tapu devir masrafları alıcıya aittir
+                  </div>
+                </>
+              ) : currentService === 'vip-transfer' ? (
+                // Transfer için fiyat gösterimi yok
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-medium text-blue-900 mb-2">🚗 Transfer Hizmeti</h4>
+                  <p className="text-sm text-blue-800">
+                    Fiyat rezervasyon sırasında mesafe ve araç tipine göre belirlenecektir.
+                  </p>
+                </div>
+              ) : (
+                // Diğer servisler için normal fiyat gösterimi
+                <>
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-2xl font-bold text-gray-900">
+                      {listing.price_per_day?.toLocaleString()} TRY
+                    </span>
+                    <span className="text-gray-500">/ {t('perNight')}</span>
+                  </div>
+                  {listing.price_per_week && (
+                    <div className="text-sm text-gray-600">
+                      {t('weeklyPrice')}: {listing.price_per_week?.toLocaleString()} TRY
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+
+            {/* Rezervasyon Formu - Mobil için kısaltılmış */}
+            <div className="space-y-3">
+              {currentService === 'boat-rental' ? (
+                // Tekne için özel form
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      {t('tourDate')} <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="date"
+                      required
+                      value={selectedDate}
+                      onChange={(e) => setSelectedDate(e.target.value)}
+                      min={new Date().toISOString().split('T')[0]}
+                      className={`w-full px-3 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900 ${
+                        selectedDate && !isDateAvailable(selectedDate) 
+                          ? 'border-red-300' 
+                          : 'border-gray-300'
+                      }`}
+                    />
+                    {selectedDate && !isDateAvailable(selectedDate) && (
+                      <p className="text-red-500 text-xs mt-1">{t('dateNotAvailable')}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      {t('tourType')} <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      required
+                      value={selectedTour}
+                      onChange={(e) => setSelectedTour(e.target.value)}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                    >
+                      <option value="">{t('selectTour')}</option>
+                      <option value="half-morning">🌅 {t('morningTour')} (5 saat)</option>
+                      <option value="half-evening">🌅 {t('eveningTour')} (4 saat)</option>
+                      <option value="full-day">☀️ {t('fullDayTour')} (10 saat)</option>
+                    </select>
+                  </div>
+                </>
+              ) : currentService === 'properties-for-sale' ? (
+                // Emlak satış için bilgi alanı
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-medium text-blue-900 mb-2">📞 İletişim</h4>
+                  <p className="text-sm text-blue-800 mb-3">
+                    Bu emlak hakkında detaylı bilgi almak ve görüntüleme randevusu ayarlamak için iletişime geçin.
+                  </p>
+                </div>
+              ) : currentService === 'vip-transfer' ? (
+                // VIP Transfer için özel form - Mobil
+                <>
+                  {/* Transfer Yönü Seçimi - Mobil */}
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      🔄 Transfer Yönü <span className="text-red-500">*</span>
+                    </label>
+                    <div className="grid grid-cols-2 gap-2">
+                      <label className={`flex flex-col items-center p-2 border-2 rounded-lg cursor-pointer transition-colors text-xs ${
+                        transferDirection === 'one-way' 
+                          ? 'border-blue-500 bg-blue-100 text-blue-800' 
+                          : 'border-gray-200 bg-white text-gray-700'
+                      }`}>
+                        <input
+                          type="radio"
+                          name="transferDirection"
+                          value="one-way"
+                          checked={transferDirection === 'one-way'}
+                          onChange={(e) => setTransferDirection(e.target.value as 'one-way' | 'round-trip')}
+                          className="sr-only"
+                        />
+                        <div className="text-lg mb-1">➡️</div>
+                        <div className="font-medium">Tek Yön</div>
+                      </label>
+                      
+                      <label className={`flex flex-col items-center p-2 border-2 rounded-lg cursor-pointer transition-colors text-xs ${
+                        transferDirection === 'round-trip' 
+                          ? 'border-blue-500 bg-blue-100 text-blue-800' 
+                          : 'border-gray-200 bg-white text-gray-700'
+                      }`}>
+                        <input
+                          type="radio"
+                          name="transferDirection"
+                          value="round-trip"
+                          checked={transferDirection === 'round-trip'}
+                          onChange={(e) => setTransferDirection(e.target.value as 'one-way' | 'round-trip')}
+                          className="sr-only"
+                        />
+                        <div className="text-lg mb-1">↔️</div>
+                        <div className="font-medium">Çift Yön</div>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      📅 Transfer Tarihi <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="date"
+                      required
+                      value={checkIn}
+                      onChange={(e) => setCheckIn(e.target.value)}
+                      min={new Date().toISOString().split('T')[0]}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        📍 Nereden <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={pickupLocation}
+                        onChange={(e) => setPickupLocation(e.target.value)}
+                        placeholder="Kalkış noktası"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        📍 Nereye <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        value={transferLocation}
+                        onChange={(e) => setTransferLocation(e.target.value)}
+                        placeholder="Varış noktası"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Çift Yön İçin Dönüş Bilgileri - Mobil */}
+                  {transferDirection === 'round-trip' && (
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                      <div className="text-sm font-medium text-yellow-800 mb-2">🔄 Dönüş Transfer</div>
+                      <div>
+                        <label className="block text-xs text-gray-600 mb-1">📅 Dönüş Tarihi <span className="text-red-500">*</span></label>
+                        <input
+                          type="date"
+                          required={transferDirection === 'round-trip'}
+                          value={returnDate}
+                          onChange={(e) => setReturnDate(e.target.value)}
+                          min={checkIn || new Date().toISOString().split('T')[0]}
+                          className="w-full px-2 py-1 text-sm border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 bg-white"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      {t('guests')} <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      required
+                      value={guests}
+                      onChange={(e) => setGuests(parseInt(e.target.value))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                    >
+                      {Array.from({ length: (listing.max_guests || 10) }, (_, i) => i + 1).map(num => (
+                        <option key={num} value={num}>{num} {commonT('person')}</option>
+                      ))}
+                    </select>
+                  </div>
+                </>
+              ) : (
+                // Diğer servisler için form
+                <>
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        {t('checkIn')} <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="date"
+                        required
+                        value={checkIn}
+                        onChange={(e) => setCheckIn(e.target.value)}
+                        min={new Date().toISOString().split('T')[0]}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        {t('checkOut')} <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="date"
+                        required
+                        value={checkOut}
+                        onChange={(e) => setCheckOut(e.target.value)}
+                        min={checkIn || new Date().toISOString().split('T')[0]}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      {t('guests')} <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      required
+                      value={guests}
+                      onChange={(e) => setGuests(parseInt(e.target.value))}
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                    >
+                      {Array.from({ length: (listing.max_guests || 10) }, (_, i) => i + 1).map(num => (
+                        <option key={num} value={num}>{num} {commonT('person')}</option>
+                      ))}
+                    </select>
+                  </div>
+                </>
+              )}
+
+              {/* Toplam fiyat */}
+              {(currentService !== 'properties-for-sale' && currentService !== 'vip-transfer' && ((currentService === 'boat-rental' && selectedDate && selectedTour) || (currentService !== 'boat-rental' && checkIn && checkOut))) && (
+                <div className="bg-gray-50 p-3 rounded-lg">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium text-gray-900">{t('totalPrice')}</span>
+                    <span className="text-xl font-bold text-blue-600">
+                      {calculateTotal()?.toLocaleString()} TRY
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              {/* Rezervasyon butonu */}
+              <button
+                onClick={handleReservation}
+                disabled={(() => {
+                  if (currentService === 'boat-rental') {
+                    return !selectedDate || !selectedTour;
+                  }
+                  if (currentService === 'vip-transfer') {
+                    const basicRequirements = !checkIn || !checkOut || !pickupLocation || !transferLocation;
+                    const roundTripRequirements = transferDirection === 'round-trip' && (!returnDate || !returnTime);
+                    return basicRequirements || roundTripRequirements;
+                  }
+                  if (currentService === 'car-rental') {
+                    const hasRequiredFields = checkIn && checkOut && pickupLocation && dropoffLocation;
+                    if (!hasRequiredFields) return true;
+                    const days = Math.ceil((new Date(checkOut).getTime() - new Date(checkIn).getTime()) / (1000 * 60 * 60 * 24));
+                    return days < 2;
+                  }
+                  if (currentService === 'properties-for-sale') {
+                    return false;
+                  }
+                  return !checkIn || !checkOut;
+                })()}
+                className="w-full bg-blue-600 text-white py-3 px-4 rounded-md font-medium hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+              >
+                {t('makeReservation')}
+              </button>
+            </div>
+          </div>
+
+          {/* Açıklama - Mobil */}
+          <div className="bg-white rounded-lg shadow-sm p-6">
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">{t('description')}</h2>
+            <p className="text-gray-700 leading-relaxed">{description}</p>
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden lg:grid lg:grid-cols-7 gap-8">
           {/* Sol taraf - Resimler ve Detaylar */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-4 space-y-8">
             {/* Resim Galerisi */}
             {listing.images && listing.images.length > 0 && (
               <div className="bg-white rounded-lg shadow-sm overflow-hidden">
-                <div className="aspect-video bg-gray-200">
+                <div className="aspect-[3/2] bg-gray-200">
                   <img
                     src={listing.images[selectedImages]}
                     alt={title}
@@ -605,7 +1001,7 @@ export default function ListingDetailPage({
           </div>
 
           {/* Sağ taraf - Rezervasyon */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-3">
             <div className="bg-white rounded-lg shadow-sm p-6 sticky top-8">
               <div className="mb-6">
                 {currentService === 'boat-rental' ? (
@@ -646,6 +1042,14 @@ export default function ListingDetailPage({
                       • Tapu devir masrafları alıcıya aittir
                     </div>
                   </>
+                ) : currentService === 'vip-transfer' ? (
+                  // Transfer için fiyat gösterimi yok
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-medium text-blue-900 mb-2">🚗 Transfer Hizmeti</h4>
+                    <p className="text-sm text-blue-800">
+                      Fiyat rezervasyon sırasında mesafe ve araç tipine göre belirlenecektir.
+                    </p>
+                  </div>
                 ) : (
                   // Diğer servisler için normal fiyat gösterimi  
                   <>
@@ -750,8 +1154,8 @@ export default function ListingDetailPage({
                       </div>
                     </div>
                   </>
-                ) : (
-                  // Diğer servisler için form
+                ) : currentService !== 'vip-transfer' ? (
+                  // Diğer servisler için form (VIP Transfer hariç)
                   <>
                     <div className="grid grid-cols-2 gap-3">
                       <div>
@@ -797,6 +1201,8 @@ export default function ListingDetailPage({
                         />
                       </div>
                     </div>
+                  </>
+                ) : null}
 
                     {/* Car Rental için minimum süre uyarısı */}
                     {currentService === 'car-rental' && checkIn && checkOut && (
@@ -818,6 +1224,86 @@ export default function ListingDetailPage({
                     {/* VIP Transfer için konum seçimleri */}
                     {currentService === 'vip-transfer' && (
                       <>
+                        {/* Transfer Yönü Seçimi */}
+                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                          <label className="block text-sm font-medium text-gray-700 mb-3">
+                            🔄 Transfer Yönü <span className="text-red-500">*</span>
+                          </label>
+                          <div className="grid grid-cols-2 gap-3">
+                            <label className={`flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-colors ${
+                              transferDirection === 'one-way' 
+                                ? 'border-blue-500 bg-blue-100 text-blue-800' 
+                                : 'border-gray-200 bg-white text-gray-700 hover:border-blue-300'
+                            }`}>
+                              <input
+                                type="radio"
+                                name="transferDirection"
+                                value="one-way"
+                                checked={transferDirection === 'one-way'}
+                                onChange={(e) => setTransferDirection(e.target.value as 'one-way' | 'round-trip')}
+                                className="sr-only"
+                              />
+                              <div className="text-center">
+                                <div className="text-2xl mb-1">➡️</div>
+                                <div className="font-medium text-sm">Tek Yön</div>
+                                <div className="text-xs text-gray-500">A noktasından B noktasına</div>
+                              </div>
+                            </label>
+                            
+                            <label className={`flex items-center justify-center p-3 border-2 rounded-lg cursor-pointer transition-colors ${
+                              transferDirection === 'round-trip' 
+                                ? 'border-blue-500 bg-blue-100 text-blue-800' 
+                                : 'border-gray-200 bg-white text-gray-700 hover:border-blue-300'
+                            }`}>
+                              <input
+                                type="radio"
+                                name="transferDirection"
+                                value="round-trip"
+                                checked={transferDirection === 'round-trip'}
+                                onChange={(e) => setTransferDirection(e.target.value as 'one-way' | 'round-trip')}
+                                className="sr-only"
+                              />
+                              <div className="text-center">
+                                <div className="text-2xl mb-1">↔️</div>
+                                <div className="font-medium text-sm">Çift Yön</div>
+                                <div className="text-xs text-gray-500">A-B-A gidiş dönüş</div>
+                              </div>
+                            </label>
+                          </div>
+                        </div>
+
+                        {/* Ana Transfer Tarih ve Saati */}
+                        <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                          <h4 className="font-medium text-green-800 mb-3">📅 Transfer Bilgileri</h4>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-1">
+                                📅 Transfer Tarihi <span className="text-red-500">*</span>
+                              </label>
+                              <input
+                                type="date"
+                                required
+                                value={checkIn}
+                                onChange={(e) => setCheckIn(e.target.value)}
+                                min={new Date().toISOString().split('T')[0]}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-sm font-medium text-gray-700 mb-1">
+                                🕒 Transfer Saati <span className="text-red-500">*</span>
+                              </label>
+                              <input
+                                type="time"
+                                required
+                                value={checkOut}
+                                onChange={(e) => setCheckOut(e.target.value)}
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div>
                             <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -894,6 +1380,43 @@ export default function ListingDetailPage({
                             </div>
                           </div>
                         </div>
+
+                        {/* Çift Yön İçin Dönüş Bilgileri */}
+                        {transferDirection === 'round-trip' && (
+                          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                            <h4 className="font-medium text-yellow-800 mb-3">🔄 Dönüş Transfer Bilgileri</h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                  📅 Dönüş Tarihi <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                  type="date"
+                                  required={transferDirection === 'round-trip'}
+                                  value={returnDate}
+                                  onChange={(e) => setReturnDate(e.target.value)}
+                                  min={checkIn || new Date().toISOString().split('T')[0]}
+                                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                                />
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">
+                                  🕒 Dönüş Saati <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                  type="time"
+                                  required={transferDirection === 'round-trip'}
+                                  value={returnTime}
+                                  onChange={(e) => setReturnTime(e.target.value)}
+                                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-900"
+                                />
+                              </div>
+                            </div>
+                            <div className="mt-2 text-xs text-yellow-700">
+                              📍 Dönüş: <strong>{transferLocation}</strong> → <strong>{pickupLocation}</strong>
+                            </div>
+                          </div>
+                        )}
 
                         {/* VIP Transfer Ekstra Alanlar */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
@@ -1047,8 +1570,6 @@ export default function ListingDetailPage({
                         </div>
                       </div>
                     )}
-                  </>
-                )}
 
                 {/* Misafir sayısı sadece gerekli servislerde göster */}
                 {currentService !== 'car-rental' && currentService !== 'properties-for-sale' && (
@@ -1317,7 +1838,7 @@ export default function ListingDetailPage({
                 )}
 
                 {((currentService === 'boat-rental' && selectedDate && selectedTour) || 
-                  (currentService !== 'boat-rental' && currentService !== 'properties-for-sale' && checkIn && checkOut) ||
+                  (currentService !== 'boat-rental' && currentService !== 'properties-for-sale' && currentService !== 'vip-transfer' && checkIn && checkOut) ||
                   (currentService === 'properties-for-sale')) && (
                   <div className="border-t pt-3">
                     <h3 className="text-base font-semibold text-gray-900 mb-2">
@@ -1453,7 +1974,9 @@ export default function ListingDetailPage({
                       return !selectedDate || !selectedTour;
                     }
                     if (currentService === 'vip-transfer') {
-                      return !checkIn || !checkOut || !transferLocation || !pickupLocation;
+                      const basicRequirements = !checkIn || !checkOut || !transferLocation || !pickupLocation;
+                      const roundTripRequirements = transferDirection === 'round-trip' && (!returnDate || !returnTime);
+                      return basicRequirements || roundTripRequirements;
                     }
                     if (currentService === 'car-rental') {
                       const hasRequiredFields = checkIn && checkOut && pickupLocation && dropoffLocation;

@@ -15,7 +15,8 @@
     "makeReservation": "احجز الآن",
     "whatsappMessage": "مرحباً، أريد الحصول على معلومات حول {service}.",
     "contact": "تواصل معنا",
-    "language": "اللغة"
+    "language": "اللغة",
+    "person": "شخص"
   },
   "navigation": {
     "home": "الرئيسية",

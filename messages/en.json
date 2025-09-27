@@ -18,7 +18,8 @@
     "language": "Language",
     "location": "Location",
     "ourLocation": "Our Location",
-    "liveSupport": "Live Support"
+    "liveSupport": "Live Support",
+    "person": "person"
   },
   "navigation": {
     "home": "Home",

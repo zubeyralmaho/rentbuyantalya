@@ -161,29 +161,17 @@ export default function VipTransferServicePage({ locale, vehicles = [] }: VipTra
               </div>
             </div>
             
-            <h3 className="text-lg font-bold mb-2" style={{color: 'var(--dark-text)'}}>
+            <h3 className="text-lg font-bold mb-4" style={{color: 'var(--dark-text)'}}>
               {vehicle.name}
             </h3>
 
-            <div className="grid grid-cols-2 gap-3 mb-4 text-sm">
-              <div style={{color: 'var(--dark-text-muted)'}}>
-                <span className="font-medium">Kapasite:</span> {vehicle.capacity} kişi
-              </div>
-              <div style={{color: 'var(--dark-text-muted)'}}>
-                <span className="font-medium">Temel Ücret:</span> {formatPrice(vehicle.basePrice)}
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <div className="text-lg font-bold mb-2" style={{color: 'var(--accent-500)'}}>
-                {formatPrice(vehicle.pricePerKm)} <span className="text-sm font-normal">/ km</span>
-              </div>
-              
+            {/* Vehicle Features */}
+            <div className="mb-6">
               <div className="flex flex-wrap gap-2">
-                {vehicle.features.slice(0, 3).map((feature: string, index: number) => (
+                {vehicle.features.map((feature: string, index: number) => (
                   <span 
                     key={index}
-                    className="text-xs px-2 py-1 rounded-full"
+                    className="text-xs px-3 py-2 rounded-full"
                     style={{
                       backgroundColor: 'var(--dark-bg-secondary)', 
                       color: 'var(--dark-text-muted)',
@@ -193,42 +181,19 @@ export default function VipTransferServicePage({ locale, vehicles = [] }: VipTra
                     {feature}
                   </span>
                 ))}
-                {vehicle.features.length > 3 && (
-                  <span 
-                    className="text-xs px-2 py-1 rounded-full"
-                    style={{
-                      backgroundColor: 'var(--dark-bg-secondary)', 
-                      color: 'var(--dark-text-muted)',
-                      border: '1px solid var(--dark-border)'
-                    }}
-                  >
-                    +{vehicle.features.length - 3} özellik
-                  </span>
-                )}
               </div>
             </div>
 
-            <div className="flex items-center justify-between">
-              {vehicle.available ? (
-                <span className="px-3 py-1 bg-blue-600 text-white text-xs rounded-full">
-                  {tCommon('available')}
-                </span>
-              ) : (
-                <span className="px-3 py-1 bg-red-600 text-white text-xs rounded-full">
-                  {tCommon('notAvailable')}
-                </span>
-              )}
-              
-              <div className="space-x-2">
-                <a 
-                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=${tCommon('whatsappMessage', { service: vehicle.name })}`}
-                  className="btn-primary text-sm px-3 py-2"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {tCommon('makeReservation')}
-                </a>
-              </div>
+            {/* Reservation Button */}
+            <div className="text-center">
+              <a 
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP}?text=${tCommon('whatsappMessage', { service: vehicle.name })}`}
+                className="btn-primary inline-block px-6 py-3 text-center w-full"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {tCommon('makeReservation')}
+              </a>
             </div>
           </div>
           )) : (

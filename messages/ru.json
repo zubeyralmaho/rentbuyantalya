@@ -15,7 +15,8 @@
     "makeReservation": "Забронировать",
     "whatsappMessage": "Здравствуйте, я хочу получить информацию о {service}.",
     "contact": "Контакты",
-    "language": "Язык"
+    "language": "Язык",
+    "person": "человек"
   },
   "navigation": {
     "home": "Главная",
