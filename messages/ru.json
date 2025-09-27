@@ -1,0 +1,415 @@
+{
+  "common": {
+    "rentBuyAntalya": "RentBuy Antalya",
+    "whatsapp": "WhatsApp",
+    "call": "Позвонить",
+    "viewOnMaps": "Посмотреть на карте",
+    "instagram": "Instagram",
+    "learnMore": "Узнать больше",
+    "contactUs": "Связаться с нами",
+    "todayVisitors": "Сегодня посмотрели {count} человек",
+    "loading": "Загружается...",
+    "perDay": "/день",
+    "available": "Доступен",
+    "notAvailable": "Забронирован",
+    "makeReservation": "Забронировать",
+    "whatsappMessage": "Здравствуйте, я хочу получить информацию о {service}.",
+    "contact": "Контакты",
+    "language": "Язык"
+  },
+  "navigation": {
+    "home": "Главная",
+    "services": "Услуги",
+    "rentACar": "Аренда автомобилей",
+    "vipTransfer": "VIP трансфер",
+    "boatRental": "Аренда лодок",
+    "villaRental": "Аренда вилл",
+    "apartRental": "Аренда квартир",
+    "propertiesForSale": "Недвижимость на продажу",
+    "about": "О нас",
+    "contact": "Контакты",
+    "members": "Регистрация",
+    "profile": "Мой профиль",
+    "faq": "Часто задаваемые вопросы",
+    "campaigns": "Акции",
+    "blog": "Блог"
+  },
+  "listing": {
+    "title": "Подробности",
+    "description": "Описание",
+    "features": "Особенности",
+    "guests": "гостей",
+    "checkIn": "Заезд",
+    "checkOut": "Выезд",
+    "guestCount": "Количество гостей",
+    "days": "дней",
+    "total": "Итого",
+    "makeReservation": "Забронировать",
+    "whatsappInfo": "Мы свяжемся с вами через WhatsApp",
+    "selectDates": "Пожалуйста, выберите даты",
+    "minimumDays": "Минимальная аренда {days} дней",
+    "reservationMessage": "Здравствуйте! Я хочу забронировать {title}.\n\nЗаезд: {checkIn}\nВыезд: {checkOut}\nКоличество гостей: {guests}\nИтоговая цена: {total} TRY\n\nМожем ли мы обсудить детали?",
+  "profile": {
+    "title": "Мой профиль",
+    "welcome": "Добро пожаловать",
+    "profileInfo": "Информация профиля",
+    "pastServices": "История услуг",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "email": "Email",
+    "phone": "Телефон",
+    "registrationDate": "Дата регистрации",
+    "emailStatus": "Статус email",
+    "verified": "Подтвержден",
+    "pending": "Ожидает подтверждения",
+    "signOut": "Выйти",
+    "loadingReservations": "Загружаются бронирования...",
+    "noReservations": "У вас пока нет бронирований.",
+    "startDate": "Дата начала",
+    "endDate": "Дата окончания",
+    "totalPrice": "Общая стоимость",
+    "reservationDate": "Дата бронирования",
+    "status": {
+      "confirmed": "Подтвержден",
+      "pending": "В ожидании",
+      "cancelled": "Отменен",
+      "completed": "Завершен"
+    },
+    "notSpecified": "Не указано"
+  },
+  "auth": {
+    "login": "Войти",
+    "loginSubtitle": "Войдите в свой аккаунт",
+    "signup": "Регистрация",
+    "signupSubtitle": "Создайте новый аккаунт",
+    "email": "Email",
+    "password": "Пароль",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "phone": "Телефон",
+    "confirmPassword": "Подтвердить пароль",
+    "loginButton": "Войти",
+    "signupButton": "Зарегистрироваться",
+    "switchToSignup": "Нет аккаунта? Зарегистрируйтесь",
+    "switchToLogin": "Уже есть аккаунт? Войдите",
+    "loginSuccess": "Вход выполнен успешно!",
+    "signupSuccess": "Регистрация успешна!",
+    "loginError": "Ошибка входа",
+    "signupError": "Ошибка регистрации",
+    "emailRequired": "Email обязателен",
+    "passwordRequired": "Пароль обязателен",
+    "passwordMismatch": "Пароли не совпадают",
+    "redirecting": "Перенаправление..."
+  },
+    "perDay": "/ день",
+    "weekly": "Еженедельно",
+    "tourDate": "Дата",
+    "selectTour": "Выберите тур",
+    "morningTour": "Утренний тур (10:00-15:00)",
+    "eveningTour": "Вечерний тур (16:00-20:00)",
+    "fullDayTour": "Полный день тур (10:00-20:00)",
+    "pickupLocation": "Место получения",
+    "dropoffLocation": "Место возврата",
+    "transferLocation": "Место трансфера",
+    "selectLocation": "Выберите место",
+    "selectFromMap": "Выбрать на карте",
+    "pickupLocationVip": "Место посадки",
+    "dropoffLocationVip": "Место высадки",
+    "selectPickupLocation": "Выберите место посадки",
+    "selectDropoffLocation": "Выберите место высадки",
+    "selectFromMapPickup": "Выбрать на карте",
+    "selectFromMapDropoff": "Выбрать на карте",
+    "luggageCount": "Количество багажа",
+    "noLuggage": "Без багажа",
+    "luggageItems": "{count} единиц багажа",
+    "childSeats": "Детские кресла (Бесплатно)",
+    "noChildSeats": "Без детских кресел",
+    "childSeatItems": "{count} детских кресел",
+    "specialWelcome": "Особая встреча (Доп. плата)",
+    "flowerWelcome": "Встреча с цветами",
+    "champagneWelcome": "Встреча с шампанским",
+    "pickupLabel": "Посадка:",
+    "dropoffLabel": "Высадка:",
+    "vipTransferExtras": "Дополнительные услуги VIP трансфера",
+    "vipTransferService": "Услуга VIP трансфера",
+    "freeIncluded": "Бесплатно включено:",
+    "luggageTransport": "перевозка багажа",
+    "childSeat": "детское кресло",
+    "selectPickupDropoffDates": "Пожалуйста, выберите даты и места посадки/высадки",
+    "mapSelect": "Выберите место на карте",
+    "confirmLocation": "Подтвердить место",
+    "closeMap": "Закрыть карту",
+    "selectedLocation": "Выбранное место",
+    "carRentalExtras": "Дополнительные услуги бронирования",
+    "driverInfo": "Информация о водителе",
+    "paymentOptions": "Способы оплаты",
+    "priceBreakdown": "Итоговая цена",
+    "carRental": "Аренда автомобиля",
+    "extraServices": "Дополнительные услуги",
+    "dailyRate": "Ежедневно",
+    "oneTime": "Однократно",
+    "differentLocationFee": "Плата за возврат в другом месте",
+    "minimumRentalDays": "Аренда автомобиля должна быть минимум 2 дня. Пожалуйста, обновите ваши даты.",
+    "fullName": "Имя и Фамилия",
+    "birthDate": "Дата рождения",
+    "flightNotes": "Заметки о рейсе",
+    "phone": "Номер телефона",
+    "email": "Адрес электронной почты",
+    "specialNotes": "Особые примечания",
+    "createAccount": "Я хочу создать аккаунт с указанным адресом электронной почты",
+    "password": "Введите пароль",
+    "confirmPassword": "Подтвердите пароль",
+    "cash": "Наличные",
+    "bankTransfer": "Банковский перевод / EFT",
+    "fullNamePlaceholder": "Ваше имя и фамилия...",
+    "flightNotesPlaceholder": "Необязательно к заполнению......",
+    "phonePlaceholder": "Ваш номер телефона...",
+    "emailPlaceholder": "Ваш адрес электронной почты...",
+    "specialNotesPlaceholder": "Необязательно к заполнению......",
+    "enterLocationAddress": "Введите адрес местоположения:",
+    "locationExample": "например: Lara Beach, Antalya",
+    "phonePlaceholderFormat": "+90 xxx xxx xx xx",
+    "passwordMinLength": "Минимум 6 символов",
+    "confirmPasswordPlaceholder": "Подтвердите пароль"
+  },
+  "home": {
+    "hero": {
+      "title": "Самый надежный туристический партнер Антальи",
+      "subtitle": "Получите незабываемые впечатления от отпуска с услугами аренды автомобилей, VIP трансфера, лодок и вилл.",
+      "cta": "Откройте для себя наши услуги"
+    },
+    "services": {
+      "title": "Как мы можем вам помочь?",
+      "subtitle": "Мы предлагаем персонализированные туристические решения для вас"
+    },
+    "about": {
+      "title": "О нас",
+      "description1": "Как RentBuy Antalya, мы - опытная команда, многие годы работающая в туристическом секторе в Анталье.",
+      "description2": "Мы ставим удовлетворение наших клиентов на первое место, предоставляя надежные решения по аренде автомобилей, VIP трансферу, аренде лодок и вилл.",
+      "description3": "С нашим подходом к качественному обслуживанию и широким автопарком мы стремимся создавать незабываемые впечатления от отпуска."
+    }
+  },
+  "faq": {
+    "title": "Часто задаваемые вопросы",
+    "subtitle": "Ответы на ваши самые частые вопросы",
+    "items": [
+      {
+        "question": "Как сделать бронирование?",
+        "answer": "Вы можете сделать бронирование, отправив нам сообщение в WhatsApp или позвонив по телефону. Ваше бронирование будет подтверждено после обсуждения деталей услуги."
+      },
+      {
+        "question": "Какие варианты оплаты доступны?",
+        "answer": "Вы можете оплатить наличными, кредитной картой или банковским переводом. Для некоторых услуг может потребоваться предоплата."
+      },
+      {
+        "question": "Каковы условия отмены и возврата?",
+        "answer": "Условия отмены варьируются в зависимости от услуги. Условия отмены будут подробно предоставлены вам при бронировании."
+      },
+      {
+        "question": "Есть ли возрастные ограничения для аренды автомобиля?",
+        "answer": "Для аренды автомобиля вам должно быть не менее 21 года и иметь водительский стаж не менее 2 лет."
+      },
+      {
+        "question": "Включена ли уборка в аренду вилл и квартир?",
+        "answer": "Да, первоначальная уборка включена во все аренды вилл и квартир. Вы также можете запросить дополнительную услугу уборки во время проживания."
+      },
+      {
+        "question": "Какие районы покрывает услуга VIP трансфера?",
+        "answer": "Мы предлагаем услуги VIP трансфера из аэропорта Антальи в центр города, Кемер, Белек, Сиде и Аланью."
+      }
+    ],
+    "contactTitle": "Не нашли ответ на свой вопрос?",
+    "contactDescription": "Свяжитесь с нами, мы будем рады помочь вам.",
+    "whatsappButton": "Связаться через WhatsApp",
+    "phoneButton": "Позвонить по телефону"
+  },
+  "services": {
+    "rentACar": {
+      "title": "Услуги аренды автомобилей",
+      "description": "Выберите сегмент автомобиля",
+      "segments": {
+        "economic": {
+          "name": "Экономичные автомобили",
+          "category": "Economic",
+          "features": ["Механическая коробка", "Кондиционер", "Экономичный расход топлива"]
+        },
+        "midClass": {
+          "name": "Автомобили среднего класса",
+          "category": "Mid-Class", 
+          "features": ["Автоматическая коробка", "GPS", "Bluetooth"]
+        },
+        "premium": {
+          "name": "Премиум автомобили",
+          "category": "Premium",
+          "features": ["Кожаные сиденья", "Люк", "Премиум звук"]
+        },
+        "atvJeep": {
+          "name": "ATV/Jeep",
+          "category": "ATV/Jeep", 
+          "features": ["Полный привод", "Внедорожник", "Мощный двигатель"]
+        }
+      },
+      "features": {
+        "standardTitle": "Стандартно во всех автомобилях",
+        "insurance": "Полная страховка",
+        "fullTank": "Полный бак",
+        "gps": "GPS навигация",
+        "support": "Поддержка 24/7"
+      },
+      "common": {
+        "perDay": "₺/День",
+        "available": "Доступно",
+        "notAvailable": "Недоступно",
+        "viewDetails": "Подробности",
+        "bookNow": "Забронировать"
+      }
+    },
+    "vipTransfer": {
+      "title": "Услуги VIP трансфера",
+      "description": "Выберите ваш автомобиль",
+      "routes": {
+        "airportHotel": {
+          "name": "Аэропорт - Отель",
+          "route": "Аэропорт Антальи → Центр города"
+        },
+        "hotelAirport": {
+          "name": "Отель - Аэропорт",
+          "route": "Центр города → Аэропорт Антальи"
+        },
+        "cityTour": {
+          "name": "Городской тур",
+          "route": "Центр Антальи - Калеичи - Марина"
+        },
+        "sideTransfer": {
+          "name": "Трансфер в Сиде",
+          "route": "Аэропорт Антальи → Сиде"
+        }
+      },
+      "features": {
+        "standardTitle": "Стандартно во всех трансферах",
+        "aircondition": "Кондиционер",
+        "wifi": "WiFi",
+        "bottledWater": "Бесплатная вода",
+        "meetAndGreet": "Услуга встречи"
+      },
+      "vehicleInfo": {
+        "duration": "Длительность",
+        "vehicleType": "Тип автомобиля",
+        "capacity": "Вместимость",
+        "person": "человек"
+      }
+    },
+    "boatRental": {
+      "title": "Аренда лодок",
+      "description": "Выберите интересующий вас регион"
+    },
+    "villaRental": {
+      "title": "Аренда вилл",
+      "description": "Отпуск вашей мечты на вилле",
+      "seasonalPricing": {
+        "title": "Сезонное ценообразование",
+        "winter": {
+          "title": "Зимний сезон",
+          "months": "Декабрь - Февраль",
+          "discount": "-30%"
+        },
+        "spring": {
+          "title": "Весна",
+          "months": "Март - Май",
+          "discount": "Обычная цена"
+        },
+        "summer": {
+          "title": "Летний сезон",
+          "months": "Июнь - Август",
+          "discount": "+50%"
+        },
+        "autumn": {
+          "title": "Осень",
+          "months": "Сентябрь - Ноябрь",
+          "discount": "+20%"
+        }
+      },
+      "servicesIncluded": {
+        "cleaning": {
+          "title": "Услуга уборки",
+          "description": "Ежедневная уборка и смена белья включены. Гарантия гигиены."
+        },
+        "transfer": {
+          "title": "Трансферная услуга",
+          "description": "Встреча в аэропорту и трансфер до места размещения включены."
+        },
+        "support": {
+          "title": "Поддержка 24/7",
+          "description": "Круглосуточная помощь и поддержка во время вашего пребывания."
+        }
+      }
+    },
+    "apartRental": {
+      "title": "Наши услуги аренды квартир",
+      "description": "Комфортное проживание как дома"
+    },
+    "propertiesForSale": {
+      "title": "Продажа недвижимости",
+      "description": "Возможности для инвестиций и жизни"
+    }
+  },
+  "footer": {
+    "description": "Самый надежный туристический партнер Антальи. Мы предлагаем незабываемые впечатления с услугами аренды автомобилей, VIP трансфера, лодок и вилл.",
+    "quickLinks": "Быстрые ссылки",
+    "ourServices": "Наши услуги",
+    "contactInfo": "Контактная информация",
+    "copyright": "Все права защищены.",
+    "privacyPolicy": "Политика конфиденциальности",
+    "termsOfService": "Условия обслуживания",
+    "location": "Анталья, Турция",
+    "instagramHandle": "@rentbuyantalya"
+  },
+  "features": {
+    "standardTitle": "Стандартно во всех автомобилях",
+    "insurance": "Комплексная страховка",
+    "fullTank": "Доставка с полным баком",
+    "gps": "GPS навигация",
+    "support": "Поддержка 24/7"
+  },
+  "profile": {
+    "title": "Мой профиль",
+    "welcome": "Добро пожаловать",
+    "profileInfo": "Информация профиля",
+    "pastServices": "История услуг",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "email": "Email",
+    "phone": "Телефон",
+    "registrationDate": "Дата регистрации",
+    "emailStatus": "Статус email",
+    "verified": "Подтвержден",
+    "pending": "Ожидает подтверждения",
+    "signOut": "Выйти",
+    "loadingReservations": "Загружаются бронирования...",
+    "noReservations": "У вас пока нет бронирований.",
+    "startDate": "Дата начала",
+    "endDate": "Дата окончания",
+    "totalPrice": "Общая стоимость",
+    "reservationDate": "Дата бронирования",
+    "status": {
+      "confirmed": "Подтвержден",
+      "pending": "В ожидании",
+      "cancelled": "Отменен",
+      "completed": "Завершен"
+    },
+    "notSpecified": "Не указано"
+  },
+  "membership": {
+    "title": "Присоединяйтесь к нам",
+    "benefits": "Станьте участником и воспользуйтесь эксклюзивными кампаниями",
+    "form": {
+      "firstName": "Имя",
+      "lastName": "Фамилия",
+      "email": "Email",
+      "phone": "Телефон",
+      "birthDate": "Дата рождения",
+      "marketingConsent": "Я согласен получать электронные письма для кампаний и объявлений",
+      "submit": "Присоединиться"
+    }
+  }
+}

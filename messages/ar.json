@@ -1,0 +1,437 @@
+{
+  "common": {
+    "rentBuyAntalya": "RentBuy أنطاليا",
+    "whatsapp": "واتساب",
+    "call": "اتصل",
+    "viewOnMaps": "عرض على الخريطة",
+    "instagram": "انستغرام",
+    "learnMore": "اعرف المزيد",
+    "contactUs": "تواصل معنا",
+    "todayVisitors": "شاهد اليوم {count} شخص",
+    "loading": "تحميل...",
+    "perDay": "/يوم",
+    "available": "متاح",
+    "notAvailable": "محجوز",
+    "makeReservation": "احجز الآن",
+    "whatsappMessage": "مرحباً، أريد الحصول على معلومات حول {service}.",
+    "contact": "تواصل معنا",
+    "language": "اللغة"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "services": "الخدمات",
+    "rentACar": "تأجير السيارات",
+    "vipTransfer": "النقل المميز",
+    "boatRental": "تأجير القوارب",
+    "villaRental": "تأجير الفيلات",
+    "apartRental": "تأجير الشقق",
+    "propertiesForSale": "عقارات للبيع",
+    "about": "من نحن",
+    "contact": "تواصل معنا",
+    "members": "التسجيل",
+    "profile": "ملفي الشخصي",
+    "faq": "الأسئلة الشائعة",
+    "campaigns": "الحملات",
+    "blog": "المدونة"
+  },
+  "listing": {
+    "title": "التفاصيل",
+    "description": "الوصف",
+    "features": "المميزات",
+    "guests": "ضيوف",
+    "checkIn": "الوصول",
+    "checkOut": "المغادرة",
+    "guestCount": "عدد الضيوف",
+    "days": "أيام",
+    "total": "المجموع",
+    "makeReservation": "احجز الآن",
+    "whatsappInfo": "سنتواصل معك عبر واتساب",
+    "selectDates": "يرجى اختيار التواريخ",
+    "minimumDays": "الحد الأدنى للإيجار {days} أيام",
+    "reservationMessage": "مرحباً! أريد حجز {title}.\n\nالوصول: {checkIn}\nالمغادرة: {checkOut}\nعدد الضيوف: {guests}\nالسعر الإجمالي: {total} TRY\n\nهل يمكننا مناقشة التفاصيل؟",
+  "profile": {
+    "title": "ملفي الشخصي",
+    "welcome": "مرحباً بك",
+    "profileInfo": "معلومات الملف الشخصي",
+    "pastServices": "الخدمات السابقة",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "registrationDate": "تاريخ التسجيل",
+    "emailStatus": "حالة البريد الإلكتروني",
+    "verified": "مؤكد",
+    "pending": "في انتظار التأكيد",
+    "signOut": "تسجيل خروج",
+    "loadingReservations": "تحميل الحجوزات...",
+    "noReservations": "لا توجد لديك حجوزات بعد.",
+    "startDate": "تاريخ البداية",
+    "endDate": "تاريخ النهاية",
+    "totalPrice": "السعر الإجمالي",
+    "reservationDate": "تاريخ الحجز",
+    "status": {
+      "confirmed": "مؤكد",
+      "pending": "في الانتظار",
+      "cancelled": "ملغي",
+      "completed": "مكتمل"
+    },
+    "notSpecified": "غير محدد"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "loginSubtitle": "سجل دخولك إلى حسابك",
+    "signup": "إنشاء حساب",
+    "signupSubtitle": "أنشئ حساباً جديداً",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "phone": "الهاتف",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "loginButton": "تسجيل الدخول",
+    "signupButton": "إنشاء حساب",
+    "switchToSignup": "ليس لديك حساب؟ أنشئ حساباً",
+    "switchToLogin": "لديك حساب بالفعل؟ سجل دخولك",
+    "loginSuccess": "تم تسجيل الدخول بنجاح!",
+    "signupSuccess": "تم إنشاء الحساب بنجاح!",
+    "loginError": "فشل تسجيل الدخول",
+    "signupError": "فشل إنشاء الحساب",
+    "emailRequired": "البريد الإلكتروني مطلوب",
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "passwordMismatch": "كلمات المرور غير متطابقة",
+    "redirecting": "جاري التوجيه..."
+  },
+    "perDay": "/ يوم",
+    "weekly": "أسبوعي",
+    "tourDate": "التاريخ",
+    "selectTour": "اختر الجولة",
+    "morningTour": "جولة الصباح (10:00-15:00)",
+    "eveningTour": "جولة المساء (16:00-20:00)",
+    "fullDayTour": "جولة يوم كامل (10:00-20:00)",
+    "pickupLocation": "مكان الاستلام",
+    "dropoffLocation": "مكان التسليم",
+    "transferLocation": "مكان النقل",
+    "selectLocation": "اختر المكان",
+    "selectFromMap": "اختر من الخريطة",
+    "pickupLocationVip": "مكان الاستقبال",
+    "dropoffLocationVip": "مكان الوصول",
+    "selectPickupLocation": "اختر مكان الاستقبال",
+    "selectDropoffLocation": "اختر مكان الوصول",
+    "selectFromMapPickup": "اختر من الخريطة",
+    "selectFromMapDropoff": "اختر من الخريطة",
+    "luggageCount": "عدد الحقائب",
+    "noLuggage": "بدون حقائب",
+    "luggageItems": "{count} حقيبة",
+    "childSeats": "مقاعد الأطفال (مجاني)",
+    "noChildSeats": "بدون مقاعد أطفال",
+    "childSeatItems": "{count} مقعد أطفال",
+    "specialWelcome": "استقبال خاص (رسوم إضافية)",
+    "flowerWelcome": "استقبال بالورود",
+    "champagneWelcome": "استقبال بالشامبانيا",
+    "pickupLabel": "الاستقبال:",
+    "dropoffLabel": "الوصول:",
+    "vipTransferExtras": "إضافات النقل المميز",
+    "vipTransferService": "خدمة النقل المميز",
+    "freeIncluded": "مشمول مجاناً:",
+    "luggageTransport": "نقل الحقائب",
+    "childSeat": "مقعد أطفال",
+    "selectPickupDropoffDates": "يرجى اختيار التواريخ وأماكن الاستقبال/الوصول",
+    "mapSelect": "اختر موقعاً على الخريطة",
+    "confirmLocation": "تأكيد الموقع",
+    "closeMap": "إغلاق الخريطة",
+    "selectedLocation": "الموقع المحدد",
+    "carRentalExtras": "خدمات إضافية للحجز",
+    "driverInfo": "معلومات السائق",
+    "paymentOptions": "خيارات الدفع",
+    "priceBreakdown": "ملخص الأسعار",
+    "carRental": "تأجير السيارات",
+    "extraServices": "خدمات إضافية",
+    "dailyRate": "يومي",
+    "oneTime": "مرة واحدة",
+    "differentLocationFee": "رسوم التسليم في مكان مختلف",
+    "minimumRentalDays": "يجب أن تكون مدة تأجير السيارة 2 أيام على الأقل. يرجى تحديث تواريخك.",
+    "fullName": "الاسم الكامل",
+    "birthDate": "تاريخ الميلاد",
+    "flightNotes": "ملاحظات الرحلة",
+    "phone": "رقم الهاتف",
+    "email": "عنوان البريد الإلكتروني",
+    "specialNotes": "ملاحظات خاصة",
+    "createAccount": "أريد إنشاء حساب بعنوان البريد الإلكتروني المُدخل",
+    "password": "أدخل كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "cash": "نقداً",
+    "bankTransfer": "حوالة بنكية / EFT",
+    "fullNamePlaceholder": "اسمك الكامل...",
+    "flightNotesPlaceholder": "اختياري للملء......",
+    "phonePlaceholder": "رقم هاتفك...",
+    "emailPlaceholder": "عنوان بريدك الإلكتروني...",
+    "specialNotesPlaceholder": "اختياري للملء......",
+    "enterLocationAddress": "أدخل عنوان الموقع:",
+    "locationExample": "مثال: Lara Beach, Antalya",
+    "phonePlaceholderFormat": "+90 xxx xxx xx xx",
+    "passwordMinLength": "6 أحرف على الأقل",
+    "confirmPasswordPlaceholder": "تأكيد كلمة المرور"
+  },
+  "home": {
+    "hero": {
+      "title": "الشريك السياحي الأكثر موثوقية في أنطاليا",
+      "subtitle": "استمتع بتجربة عطلة لا تُنسى مع خدمات تأجير السيارات والنقل المميز وتأجير القوارب والفيلات.",
+      "cta": "اكتشف خدماتنا"
+    },
+    "services": {
+      "title": "كيف يمكننا مساعدتك؟",
+      "subtitle": "نقدم لك حلول سياحية مخصصة"
+    },
+    "about": {
+      "title": "من نحن",
+      "description1": "كـ RentBuy Antalya، نحن فريق ذو خبرة يخدم في قطاع السياحة في أنطاليا لسنوات عديدة.",
+      "description2": "نضع رضا عملائنا في المقدمة من خلال تقديم حلول موثوقة في خدمات تأجير السيارات والنقل المميز وتأجير القوارب والفيلات.",
+      "description3": "بنهجنا في تقديم الخدمات عالية الجودة وأسطولنا الواسع من المركبات، نهدف إلى خلق تجارب عطلة لا تُنسى."
+    }
+  },
+  "faq": {
+    "title": "الأسئلة الشائعة",
+    "subtitle": "إجابات على أكثر الأسئلة شيوعاً",
+    "items": [
+      {
+        "question": "كيف يمكنني إجراء الحجز؟",
+        "answer": "يمكنك إجراء الحجز عن طريق مراسلتنا على الواتساب أو الاتصال بنا هاتفياً. سيتم تأكيد الحجز بعد مشاركة تفاصيل الخدمة."
+      },
+      {
+        "question": "ما هي خيارات الدفع المتاحة؟",
+        "answer": "يمكنك الدفع نقداً أو بالبطاقة الائتمانية أو التحويل البنكي. قد تتطلب بعض الخدمات دفع مقدم."
+      },
+      {
+        "question": "ما هي شروط الإلغاء والاسترداد؟",
+        "answer": "شروط الإلغاء تختلف حسب الخدمة. سيتم تقديم شروط الإلغاء لك بالتفصيل عند الحجز."
+      },
+      {
+        "question": "هل يوجد حد أدنى للعمر لتأجير السيارات؟",
+        "answer": "لتأجير السيارة يجب أن تكون بعمر 21 عاماً على الأقل وتملك رخصة قيادة لمدة عامين على الأقل."
+      },
+      {
+        "question": "هل التنظيف مشمول في تأجير الفيلات والشقق؟",
+        "answer": "نعم، التنظيف الأولي مشمول في جميع إيجارات الفيلات والشقق. يمكنك أيضاً طلب خدمة تنظيف إضافية خلال إقامتك."
+      },
+      {
+        "question": "ما هي المناطق التي تغطيها خدمة النقل المميز؟",
+        "answer": "نقدم خدمة النقل المميز من مطار أنطاليا إلى وسط المدينة وكيمير وبيليك وسيدة وألانيا."
+      }
+    ],
+    "contactTitle": "لم تجد إجابة على سؤالك؟",
+    "contactDescription": "تواصل معنا، يسعدنا مساعدتك.",
+    "whatsappButton": "تواصل عبر الواتساب",
+    "phoneButton": "اتصل هاتفياً"
+  },
+  "services": {
+    "rentACar": {
+      "title": "تأجير السيارات",
+      "description": "اختر فئة السيارة",
+      "segments": {
+        "economic": {
+          "name": "سيارات اقتصادية",
+          "category": "اقتصادية",
+          "features": ["ناقل حركة يدوي", "مكيف هواء", "موفرة للوقود"]
+        },
+        "midClass": {
+          "name": "سيارات متوسطة", 
+          "category": "متوسطة",
+          "features": ["ناقل حركة أوتوماتيكي", "GPS", "بلوتوث"]
+        },
+        "premium": {
+          "name": "سيارات فاخرة",
+          "category": "فاخرة", 
+          "features": ["مقاعد جلدية", "فتحة سقف", "نظام صوتي متميز"]
+        },
+        "atvJeep": {
+          "name": "ATV وجيب",
+          "category": "مغامرات",
+          "features": ["4x4", "طرق وعرة", "محرك قوي"]
+        }
+      },
+      "features": {
+        "standardTitle": "قياسية في جميع السيارات",
+        "insurance": "تأمين شامل",
+        "fullTank": "خزان ممتلئ",
+        "gps": "نظام تحديد المواقع",
+        "support": "دعم 24/7"
+      },
+      "common": {
+        "perDay": "ل.ت/يوم",
+        "available": "متاح",
+        "notAvailable": "غير متاح",
+        "viewDetails": "عرض التفاصيل",
+        "bookNow": "احجز الآن"
+      }
+    },
+    "vipTransfer": {
+      "title": "خدمات النقل المميز",
+      "description": "اختر سيارتك",
+      "routes": {
+        "airportHotel": {
+          "name": "المطار - الفندق",
+          "route": "مطار أنطاليا ← وسط المدينة"
+        },
+        "hotelAirport": {
+          "name": "الفندق - المطار", 
+          "route": "وسط المدينة ← مطار أنطاليا"
+        },
+        "cityTour": {
+          "name": "جولة في المدينة",
+          "route": "وسط أنطاليا - كاليتشي - المرسى"
+        },
+        "sideTransfer": {
+          "name": "نقل سايد",
+          "route": "مطار أنطاليا ← سايد"
+        }
+      },
+      "features": {
+        "standardTitle": "قياسي في جميع عمليات النقل",
+        "aircondition": "مكيف هواء",
+        "wifi": "واي فاي",
+        "bottledWater": "مياه مجانية",
+        "meetAndGreet": "خدمة الاستقبال"
+      },
+      "vehicleInfo": {
+        "duration": "المدة",
+        "vehicleType": "نوع السيارة", 
+        "capacity": "السعة",
+        "person": "شخص"
+      }
+    },
+    "boatRental": {
+      "title": "خدمات تأجير القوارب",
+      "description": "اختر المنطقة التي تهتم بها",
+      "boatTypes": {
+        "yacht": "يخت",
+        "sailboat": "قارب شراعي",
+        "motorboat": "قارب بمحرك",
+        "catamaran": "قارب مزدوج",
+        "gulet": "جوليت"
+      },
+      "boatInfo": {
+        "capacity": "السعة",
+        "length": "الطول",
+        "location": "الموقع",
+        "perDay": "يوم",
+        "meters": "متر",
+        "people": "شخص"
+      },
+      "features": {
+        "standardTitle": "قياسي في جميع القوارب",
+        "captain": "قبطان",
+        "fuel": "وقود",
+        "insurance": "تأمين", 
+        "equipment": "معدات"
+      }
+    },
+    "villaRental": {
+      "title": "تأجير الفيلات",
+      "description": "عطلة الفيلا التي تحلم بها",
+      "seasonalPricing": {
+        "title": "التسعير الموسمي",
+        "winter": {
+          "title": "موسم الشتاء",
+          "months": "ديسمبر - فبراير",
+          "discount": "-30%"
+        },
+        "spring": {
+          "title": "الربيع",
+          "months": "مارس - مايو",
+          "discount": "عادي"
+        },
+        "summer": {
+          "title": "موسم الصيف",
+          "months": "يونيو - أغسطس",
+          "discount": "+50%"
+        },
+        "autumn": {
+          "title": "الخريف",
+          "months": "سبتمبر - نوفمبر",
+          "discount": "+20%"
+        }
+      },
+      "servicesIncluded": {
+        "cleaning": {
+          "title": "خدمة التنظيف",
+          "description": "تنظيف يومي وتغيير البياضات مشمول. ضمان النظافة."
+        },
+        "transfer": {
+          "title": "خدمة النقل",
+          "description": "استقبال المطار والنقل إلى مكان الإقامة مشمول."
+        },
+        "support": {
+          "title": "دعم 24/7",
+          "description": "خدمة المساعدة والدعم على مدار الساعة طوال فترة إقامتك."
+        }
+      }
+    },
+    "apartRental": {
+      "title": "خدمات تأجير الشقق لدينا",
+      "description": "إقامة مريحة مثل المنزل"
+    },
+    "propertiesForSale": {
+      "title": "مبيعات العقارات",
+      "description": "فرص الاستثمار والعيش"
+    }
+  },
+  "footer": {
+    "description": "الشريك السياحي الأكثر موثوقية في أنطاليا. نقدم تجارب لا تُنسى مع خدمات تأجير السيارات والنقل المميز وتأجير القوارب والفيلات.",
+    "quickLinks": "روابط سريعة",
+    "ourServices": "خدماتنا",
+    "contactInfo": "معلومات الاتصال",
+    "copyright": "جميع الحقوق محفوظة.",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfService": "شروط الخدمة",
+    "location": "أنطاليا، تركيا",
+    "instagramHandle": "@rentbuyantalya"
+  },
+  "features": {
+    "standardTitle": "قياسي في جميع السيارات",
+    "insurance": "تأمين شامل", 
+    "fullTank": "التسليم مع خزان ممتلئ",
+    "gps": "نظام تحديد المواقع GPS",
+    "support": "دعم 24/7"
+  },
+  "profile": {
+    "title": "ملفي الشخصي",
+    "welcome": "مرحباً بك",
+    "profileInfo": "معلومات الملف الشخصي",
+    "pastServices": "الخدمات السابقة",
+    "firstName": "الاسم الأول",
+    "lastName": "اسم العائلة",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "registrationDate": "تاريخ التسجيل",
+    "emailStatus": "حالة البريد الإلكتروني",
+    "verified": "مؤكد",
+    "pending": "في انتظار التأكيد",
+    "signOut": "تسجيل خروج",
+    "loadingReservations": "تحميل الحجوزات...",
+    "noReservations": "لا توجد لديك حجوزات بعد.",
+    "startDate": "تاريخ البداية",
+    "endDate": "تاريخ النهاية",
+    "totalPrice": "السعر الإجمالي",
+    "reservationDate": "تاريخ الحجز",
+    "status": {
+      "confirmed": "مؤكد",
+      "pending": "في الانتظار",
+      "cancelled": "ملغي",
+      "completed": "مكتمل"
+    },
+    "notSpecified": "غير محدد"
+  },
+  "membership": {
+    "title": "انضم إلينا",
+    "benefits": "كن عضواً واستفد من الحملات الحصرية",
+    "form": {
+      "firstName": "الاسم الأول",
+      "lastName": "اسم العائلة",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "birthDate": "تاريخ الميلاد",
+      "marketingConsent": "أوافق على تلقي رسائل البريد الإلكتروني للحملات والإعلانات",
+      "submit": "انضم"
+    }
+  }
+}

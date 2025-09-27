@@ -1,0 +1,443 @@
+{
+  "common": {
+    "rentBuyAntalya": "RentBuy Antalya",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "viewOnMaps": "View on Maps",
+    "instagram": "Instagram",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "todayVisitors": "{count} people visited today",
+    "loading": "Loading...",
+    "perDay": "/day",
+    "available": "Available",
+    "notAvailable": "Reserved",
+    "makeReservation": "Make Reservation",
+    "whatsappMessage": "Hello, I would like to get information about {service}.",
+    "contact": "Contact",
+    "language": "Language",
+    "location": "Location",
+    "ourLocation": "Our Location",
+    "liveSupport": "Live Support"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "rentACar": "Car Rental",
+    "vipTransfer": "VIP Transfer",
+    "boatRental": "Boat Rental",
+    "villaRental": "Villa Rental",
+    "apartRental": "Apartment Rental",
+    "propertiesForSale": "Properties for Sale",
+    "about": "About",
+    "contact": "Contact",
+    "members": "Sign Up",
+    "profile": "My Profile",
+    "faq": "FAQ",
+    "campaigns": "Campaigns",
+    "blog": "Blog"
+  },
+  "listing": {
+    "title": "Details",
+    "description": "Description",
+    "features": "Features",
+    "guests": "guests",
+    "checkIn": "Check In",
+    "checkOut": "Check Out",
+    "guestCount": "Guest Count",
+    "days": "days",
+    "total": "Total",
+    "makeReservation": "Make Reservation",
+    "whatsappInfo": "We will contact you via WhatsApp",
+  "profile": {
+    "title": "My Profile",
+    "welcome": "Welcome",
+    "profileInfo": "Profile Information",
+    "pastServices": "Past Services",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "registrationDate": "Registration Date",
+    "emailStatus": "Email Status",
+    "verified": "Verified",
+    "pending": "Pending Verification",
+    "signOut": "Sign Out",
+    "loadingReservations": "Loading reservations...",
+    "noReservations": "You have no reservations yet.",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "totalPrice": "Total Price",
+    "reservationDate": "Reservation Date",
+    "status": {
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "cancelled": "Cancelled",
+      "completed": "Completed"
+    },
+    "notSpecified": "Not specified"
+  },
+  "auth": {
+    "login": "Login",
+    "loginSubtitle": "Sign in to your account",
+    "signup": "Sign Up",
+    "signupSubtitle": "Create a new account",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone",
+    "confirmPassword": "Confirm Password",
+    "loginButton": "Login",
+    "signupButton": "Sign Up",
+    "switchToSignup": "Don't have an account? Sign up",
+    "switchToLogin": "Already have an account? Login",
+    "loginSuccess": "Login successful!",
+    "signupSuccess": "Registration successful!",
+    "loginError": "Login failed",
+    "signupError": "Registration failed",
+    "emailRequired": "Email is required",
+    "passwordRequired": "Password is required",
+    "passwordMismatch": "Passwords don't match",
+    "redirecting": "Redirecting..."
+  },
+    "selectDates": "Please select dates",
+    "minimumDays": "You must rent for minimum {days} days",
+    "reservationMessage": "Hello! I would like to make a reservation for {title}.\n\nCheck In: {checkIn}\nCheck Out: {checkOut}\nGuest count: {guests}\nTotal price: {total} TRY\n\nCan we discuss the details?",
+    "perDay": "/ day",
+    "weekly": "Weekly",
+    "tourDate": "Date",
+    "selectTour": "Select Tour",
+    "morningTour": "Morning Tour (10:00-15:00)",
+    "eveningTour": "Evening Tour (16:00-20:00)",
+    "fullDayTour": "Full Day Tour (10:00-20:00)",
+    "pickupLocation": "Pickup Location",
+    "dropoffLocation": "Drop-off Location", 
+    "transferLocation": "Transfer Location",
+    "selectLocation": "Select Location",
+    "selectFromMap": "Select from Map",
+    "pickupLocationVip": "Pickup Location",
+    "dropoffLocationVip": "Drop-off Location",
+    "selectPickupLocation": "Select pickup location",
+    "selectDropoffLocation": "Select drop-off location",
+    "selectFromMapPickup": "Select from map",
+    "selectFromMapDropoff": "Select from map",
+    "luggageCount": "Luggage Count",
+    "noLuggage": "No luggage",
+    "luggageItems": "{count} luggage item(s)",
+    "childSeats": "Child Seats (Free)",
+    "noChildSeats": "No child seats",
+    "childSeatItems": "{count} child seat(s)",
+    "specialWelcome": "Special Welcome (Extra Fee)",
+    "flowerWelcome": "Flower Welcome",
+    "champagneWelcome": "Champagne Welcome",
+    "pickupLabel": "Pickup:",
+    "dropoffLabel": "Drop-off:",
+    "vipTransferExtras": "VIP Transfer Extras",
+    "vipTransferService": "VIP Transfer Service",
+    "freeIncluded": "Free included:",
+    "luggageTransport": "luggage transport",
+    "childSeat": "child seat",
+    "selectPickupDropoffDates": "Please select dates and pickup/drop-off locations",
+    "mapSelect": "Select a location on the map",
+    "confirmLocation": "Confirm Location",
+    "closeMap": "Close Map",
+    "selectedLocation": "Selected Location",
+    "carRentalExtras": "Reservation Extras",
+    "driverInfo": "Driver Information",
+    "paymentOptions": "Payment Options",
+    "priceBreakdown": "Price Summary",
+    "carRental": "Car Rental",
+    "extraServices": "Extra Services",
+    "dailyRate": "Daily",
+    "oneTime": "One-time",
+    "differentLocationFee": "Different Location Drop-off Fee",
+    "minimumRentalDays": "Car rental must be minimum 2 days. Please update your dates.",
+    "fullName": "Full Name",
+    "birthDate": "Date of Birth",
+    "flightNotes": "Flight Notes",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "specialNotes": "Special Notes",
+    "createAccount": "I want to create an account with the entered email address",
+    "password": "Enter Password",
+    "confirmPassword": "Confirm Password",
+    "cash": "Cash",
+    "bankTransfer": "Bank Transfer / EFT",
+    "fullNamePlaceholder": "Your Full Name...",
+    "flightNotesPlaceholder": "Optional to fill......",
+    "phonePlaceholder": "Your Phone Number...",
+    "emailPlaceholder": "Your Email Address...",
+    "specialNotesPlaceholder": "Optional to fill......",
+    "enterLocationAddress": "Enter Location Address:",
+    "locationExample": "e.g.: Lara Beach, Antalya",
+    "phonePlaceholderFormat": "+90 xxx xxx xx xx",
+    "passwordMinLength": "At least 6 characters",
+    "confirmPasswordPlaceholder": "Confirm password"
+  },
+  "home": {
+    "hero": {
+      "title": "Rent the Difference",
+      "subtitle": "Experience an unforgettable vacation with car rental, VIP transfer, boat and villa rental services.",
+      "cta": "Discover Our Services"
+    },
+    "services": {
+      "title": "How may we assist you?",
+      "subtitle": "We offer personalized tourism solutions for you"
+    },
+    "about": {
+      "title": "About Us",
+      "description1": "As RentBuy Antalya, we are an experienced team serving in the tourism sector in Antalya for many years.",
+      "description2": "We prioritize our customers' satisfaction by providing reliable solutions in car rental, VIP transfer, boat and villa rental services.",
+      "description3": "With our quality service approach and wide vehicle fleet, we aim to create unforgettable vacation experiences."
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to your most common questions",
+    "items": [
+      {
+        "question": "How do I make a reservation?",
+        "answer": "You can make a reservation by messaging us on WhatsApp or calling us by phone. Your reservation will be confirmed after sharing the service details."
+      },
+      {
+        "question": "What are the payment options?",
+        "answer": "You can pay by cash, credit card, and bank transfer/EFT. Some services may require advance payment."
+      },
+      {
+        "question": "What are the cancellation and refund conditions?",
+        "answer": "Cancellation conditions vary by service. Cancellation terms will be provided to you in detail when making a reservation."
+      },
+      {
+        "question": "Is there an age limit for car rental?",
+        "answer": "For car rental, you must be at least 21 years old and have at least 2 years of driving license experience."
+      },
+      {
+        "question": "Is cleaning included in villa and apartment rentals?",
+        "answer": "Yes, initial cleaning is included in all villa and apartment rentals. You can also request additional cleaning service during your stay."
+      },
+      {
+        "question": "Which areas does the VIP transfer service cover?",
+        "answer": "We offer VIP transfer service from Antalya airport to city center, Kemer, Belek, Side and Alanya regions."
+      }
+    ],
+    "contactTitle": "Couldn't find the answer to your question?",
+    "contactDescription": "Contact us, we are happy to help you.",
+    "whatsappButton": "Contact via WhatsApp",
+    "phoneButton": "Call by Phone"
+  },
+  "services": {
+    "rentACar": {
+      "title": "Car Rental",
+      "description": "Select vehicle segment",
+      "segments": {
+        "economic": {
+          "name": "Economy Cars",
+          "category": "Economic",
+          "features": ["Manual Transmission", "Air Conditioning", "Fuel Efficient"]
+        },
+        "midClass": {
+          "name": "Mid-Class Cars",
+          "category": "Mid-Class", 
+          "features": ["Automatic Transmission", "GPS", "Bluetooth"]
+        },
+        "premium": {
+          "name": "Luxury Cars",
+          "category": "Premium",
+          "features": ["Leather Seats", "Sunroof", "Premium Sound"]
+        },
+        "atvJeep": {
+          "name": "ATV & Jeep",
+          "category": "Adventure",
+          "features": ["4x4", "Offroad", "Powerful Engine"]
+        }
+      },
+      "features": {
+        "standardTitle": "Standard in All Cars",
+        "insurance": "Full Insurance",
+        "fullTank": "Full Tank",
+        "gps": "GPS Navigation",
+        "support": "24/7 Support"
+      },
+      "common": {
+        "perDay": "₺/Day",
+        "available": "Available",
+        "notAvailable": "Not Available",
+        "viewDetails": "View Details",
+        "bookNow": "Book Now"
+      }
+    },
+    "vipTransfer": {
+      "title": "VIP Transfer Services",
+      "description": "Choose your vehicle",
+      "routes": {
+        "airportHotel": {
+          "name": "Airport - Hotel",
+          "route": "Antalya Airport → City Center"
+        },
+        "hotelAirport": {
+          "name": "Hotel - Airport", 
+          "route": "City Center → Antalya Airport"
+        },
+        "cityTour": {
+          "name": "City Tour",
+          "route": "Antalya Center - Kaleiçi - Marina"
+        },
+        "sideTransfer": {
+          "name": "Side Transfer",
+          "route": "Antalya Airport → Side"
+        }
+      },
+      "features": {
+        "standardTitle": "Standard in All Transfers",
+        "aircondition": "Air Conditioning",
+        "wifi": "WiFi",
+        "bottledWater": "Complimentary Water",
+        "meetAndGreet": "Meet & Greet Service"
+      },
+      "vehicleInfo": {
+        "duration": "Duration",
+        "vehicleType": "Vehicle Type", 
+        "capacity": "Capacity",
+        "person": "person"
+      }
+    },
+    "boatRental": {
+      "title": "Boat Rental Regions",
+      "description": "Select the region you are interested in",
+      "selectLocation": "Select Region",
+      "locations": {
+        "antalya": "Antalya",
+        "kemer": "Kemer", 
+        "kas": "Kaş",
+        "fethiye": "Fethiye",
+        "bodrum": "Bodrum"
+      },
+      "locationDescriptions": {
+        "antalya": "Boat rental experience in Antalya, pearl of the Mediterranean",
+        "kemer": "Boat tours in harmony with nature in Kemer",
+        "kas": "Boat pleasure in the magical bays of Kaş",
+        "fethiye": "Fethiye's unique blue voyage",
+        "bodrum": "Luxury boat experience in Bodrum"
+      },
+      "backToLocations": "Back to Regions",
+      "boatsAvailable": "boats available",
+      "boatsFound": "boats found",
+      "boatTypes": {
+        "yacht": "Yacht",
+        "sailboat": "Sailboat",
+        "motorboat": "Motor Boat",
+        "catamaran": "Catamaran",
+        "gulet": "Gulet"
+      }
+    },
+    "villaRental": {
+      "title": "Villa Rental",
+      "description": "Your dream villa vacation",
+      "seasonalPricing": {
+        "title": "Seasonal Pricing",
+        "winter": {
+          "title": "Winter Season",
+          "months": "December - February",
+          "discount": "-30%"
+        },
+        "spring": {
+          "title": "Spring",
+          "months": "March - May",
+          "discount": "Normal"
+        },
+        "summer": {
+          "title": "Summer Season",
+          "months": "June - August",
+          "discount": "+50%"
+        },
+        "autumn": {
+          "title": "Autumn",
+          "months": "September - November",
+          "discount": "+20%"
+        }
+      },
+      "servicesIncluded": {
+        "cleaning": {
+          "title": "Cleaning Service",
+          "description": "Daily cleaning and linen change included. Hygiene guarantee."
+        },
+        "transfer": {
+          "title": "Transfer Service",
+          "description": "Airport pickup and transfer to accommodation included."
+        },
+        "support": {
+          "title": "24/7 Support",
+          "description": "24/7 help and support service during your stay."
+        }
+      }
+    },
+    "apartRental": {
+      "title": "Our Apartment Rental Services",
+      "description": "Comfortable stay like home"
+    },
+    "propertiesForSale": {
+      "title": "Real Estate Sales",
+      "description": "Investment and living opportunities"
+    }
+  },
+  "footer": {
+    "description": "Antalya's most reliable tourism partner. We offer unforgettable experiences with car rental, VIP transfer, boat and villa rental services.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services", 
+    "contactInfo": "Contact Information",
+    "copyright": "All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "location": "Antalya, Turkey",
+    "instagramHandle": "@rentbuyantalya"
+  },
+  "features": {
+    "standardTitle": "Standard in All Vehicles",
+    "insurance": "Comprehensive Insurance", 
+    "fullTank": "Full Tank Delivery",
+    "gps": "GPS Navigation",
+    "support": "24/7 Support"
+  },
+  "profile": {
+    "title": "My Profile",
+    "welcome": "Welcome",
+    "profileInfo": "Profile Information",
+    "pastServices": "Past Services",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "registrationDate": "Registration Date",
+    "emailStatus": "Email Status",
+    "verified": "Verified",
+    "pending": "Pending Verification",
+    "signOut": "Sign Out",
+    "loadingReservations": "Loading reservations...",
+    "noReservations": "You have no reservations yet.",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "totalPrice": "Total Price",
+    "reservationDate": "Reservation Date",
+    "status": {
+      "confirmed": "Confirmed",
+      "pending": "Pending",
+      "cancelled": "Cancelled",
+      "completed": "Completed"
+    },
+    "notSpecified": "Not specified"
+  },
+  "membership": {
+    "title": "Join Us",
+    "benefits": "Become a member and benefit from exclusive campaigns",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "birthDate": "Birth Date",
+      "marketingConsent": "I agree to receive emails for campaigns and announcements",
+      "submit": "Join"
+    }
+  }
+}

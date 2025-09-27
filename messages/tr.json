@@ -1,0 +1,459 @@
+{
+  "common": {
+    "rentBuyAntalya": "RentBuy Antalya",
+    "whatsapp": "WhatsApp",
+    "call": "Ara",
+    "viewOnMaps": "Haritada Gör",
+    "instagram": "Instagram",
+    "learnMore": "Daha Fazla",
+    "contactUs": "İletişim",
+    "todayVisitors": "Bugün {count} kişi baktı",
+    "loading": "Yükleniyor...",
+    "perDay": "/gün",
+    "available": "Müsait",
+    "notAvailable": "Rezerve",
+    "makeReservation": "Rezervasyon Yap",
+    "whatsappMessage": "Merhaba, {service} hakkında bilgi almak istiyorum.",
+    "contact": "İletişim",
+    "language": "Dil",
+    "location": "Konum",
+    "ourLocation": "Konumumuz",
+    "liveSupport": "Canlı Destek"
+  },
+  "navigation": {
+    "home": "Ana Sayfa",
+    "services": "Hizmetler",
+    "rentACar": "Araç Kiralama",
+    "vipTransfer": "VIP Transfer",
+    "boatRental": "Tekne Kiralama",
+    "villaRental": "Villa Kiralama",
+    "apartRental": "Apart Kiralama",
+    "propertiesForSale": "Satılık Konutlar",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "members": "Kayıt Ol",
+    "profile": "Profilim",
+    "faq": "SSS",
+    "campaigns": "Kampanyalar",
+    "blog": "Blog"
+  },
+  "listing": {
+    "title": "Detaylar",
+    "description": "Açıklama",
+    "features": "Özellikler",
+    "guests": "misafir",
+    "checkIn": "Giriş",
+    "checkOut": "Çıkış",
+    "guestCount": "Misafir Sayısı",
+    "days": "gün",
+    "total": "Toplam",
+    "makeReservation": "Rezervasyon Yap",
+    "whatsappInfo": "WhatsApp üzerinden iletişime geçeceğiz",
+  "profile": {
+    "title": "Profilim",
+    "welcome": "Hoş geldiniz",
+    "profileInfo": "Profil Bilgilerim",
+    "pastServices": "Geçmiş Hizmetlerim",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "registrationDate": "Kayıt Tarihi",
+    "emailStatus": "E-posta Durumu",
+    "verified": "Onaylandı",
+    "pending": "Onay Bekliyor",  
+    "signOut": "Çıkış Yap",
+    "loadingReservations": "Rezervasyonlar yükleniyor...",
+    "noReservations": "Henüz hiç rezervasyonunuz bulunmamaktadır.",
+    "startDate": "Başlangıç",
+    "endDate": "Bitiş",
+    "totalPrice": "Toplam Fiyat",
+    "reservationDate": "Rezervasyon",
+    "status": {
+      "confirmed": "Onaylandı",
+      "pending": "Beklemede",
+      "cancelled": "İptal Edildi",
+      "completed": "Tamamlandı"
+    },
+    "notSpecified": "Belirtilmemiş",
+    "redirecting": "Yönlendiriliyorsunuz..."
+  },
+  "auth": {
+    "login": "Giriş Yap",
+    "loginSubtitle": "Hesabınıza giriş yapın",
+    "signup": "Kayıt Ol",
+    "signupSubtitle": "Yeni hesap oluşturun",
+    "email": "E-posta",
+    "password": "Şifre",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "phone": "Telefon",
+    "confirmPassword": "Şifre Tekrar",
+    "loginButton": "Giriş Yap",
+    "signupButton": "Kayıt Ol",
+    "switchToSignup": "Hesabınız yok mu? Kayıt olun",
+    "switchToLogin": "Zaten hesabınız var mı? Giriş yapın",
+    "loginSuccess": "Giriş başarılı!",
+    "signupSuccess": "Kayıt başarılı!",
+    "loginError": "Giriş yapılamadı",
+    "signupError": "Kayıt olunamadı",
+    "emailRequired": "E-posta gerekli",
+    "passwordRequired": "Şifre gerekli",
+    "passwordMismatch": "Şifreler uyuşmuyor",
+    "redirecting": "Yönlendiriliyor..."
+  },
+    "selectDates": "Lütfen tarih seçiniz",
+    "minimumDays": "Minimum {days} gün kiralama yapmalısınız",
+    "reservationMessage": "Merhaba! {title} için rezervasyon yapmak istiyorum.\n\nGiriş: {checkIn}\nÇıkış: {checkOut}\nMisafir sayısı: {guests}\nToplam fiyat: {total} TRY\n\nDetayları görüşebilir miyiz?",
+    "perDay": "/ gün",
+    "weekly": "Haftalık",
+    "tourDate": "Tarih",
+    "selectTour": "Tur Seçin",
+    "morningTour": "Sabah Turu (10:00-15:00)",
+    "eveningTour": "Akşam Turu (16:00-20:00)",
+    "fullDayTour": "Tam Gün Turu (10:00-20:00)",
+    "pickupLocation": "Alış Yeri",
+    "dropoffLocation": "Dönüş Yeri",
+    "transferLocation": "Transfer Konumu",
+    "selectLocation": "Konum Seçin",
+    "selectFromMap": "Haritadan Seç",
+    "pickupLocationVip": "Alış Yeri",
+    "dropoffLocationVip": "Varış Yeri",
+    "selectPickupLocation": "Alış yeri seçin",
+    "selectDropoffLocation": "Varış yeri seçin",
+    "selectFromMapPickup": "Haritadan seç",
+    "selectFromMapDropoff": "Haritadan seç",
+    "luggageCount": "Bagaj Sayısı",
+    "noLuggage": "Bagaj yok",
+    "luggageItems": "{count} adet bagaj",
+    "childSeats": "Çocuk Koltuğu (Ücretsiz)",
+    "noChildSeats": "Çocuk koltuğu yok",
+    "childSeatItems": "{count} adet çocuk koltuğu",
+    "specialWelcome": "Özel Karşılama (Ek Ücretli)",
+    "flowerWelcome": "Çiçek Karşılama",
+    "champagneWelcome": "Şampanya Karşılama",
+    "pickupLabel": "Alış:",
+    "dropoffLabel": "Varış:",
+    "vipTransferExtras": "VIP Transfer Ekstraları",
+    "vipTransferService": "VIP Transfer Hizmeti",
+    "freeIncluded": "Ücretsiz dahil:",
+    "luggageTransport": "bagaj taşıma",
+    "childSeat": "çocuk koltuğu",
+    "selectPickupDropoffDates": "Lütfen tarih ve alış/varış yerlerini seçin",
+    "mapSelect": "Harita üzerinde bir konum seçin",
+    "confirmLocation": "Konumu Onayla",
+    "closeMap": "Haritayı Kapat",
+    "selectedLocation": "Seçilen Konum",
+    "carRentalExtras": "Rezervasyon Ekstralari",
+    "driverInfo": "Sürücü Bilgileri",
+    "paymentOptions": "Ödeme Seçenekleri",
+    "priceBreakdown": "Fiyat Özeti",
+    "carRental": "Araç Kiralama",
+    "extraServices": "Ek Hizmetler",
+    "dailyRate": "Günlük",
+    "oneTime": "Bir kerelik",
+    "differentLocationFee": "Farklı Lokasyon Teslim Ücreti",
+    "minimumRentalDays": "Araç kiralama minimum 2 gün olmalıdır. Lütfen tarihlerinizi güncelleyin.",
+    "fullName": "Adınız Soyadınız",
+    "birthDate": "Doğum Tarihiniz",
+    "flightNotes": "Uçuş Notları",
+    "phone": "Cep Telefonunuz",
+    "email": "E-posta Adresiniz",
+    "specialNotes": "Özel Notlar",
+    "createAccount": "Girdiğim e-posta adresi ile üye olmak istiyorum",
+    "password": "Şifre Girin",
+    "confirmPassword": "Şifreyi Tekrar Girin",
+    "cash": "Nakit",
+    "bankTransfer": "Banka Havalesi / EFT",
+    "fullNamePlaceholder": "Adınız Soyadınız...",
+    "flightNotesPlaceholder": "İsteğe bağlı olarak doldurulabilir......",
+    "phonePlaceholder": "Cep Telefonunuz...",
+    "emailPlaceholder": "E-posta Adresiniz...",
+    "specialNotesPlaceholder": "İsteğe bağlı olarak doldurulabilir......",
+    "enterLocationAddress": "Konum Adresini Yazın:",
+    "locationExample": "Örn: Lara Beach, Antalya",
+    "phonePlaceholderFormat": "+90 xxx xxx xx xx",
+    "passwordMinLength": "En az 6 karakter",
+    "confirmPasswordPlaceholder": "Şifreyi tekrar girin"
+  },
+  "home": {
+    "hero": {
+      "title": "Kiralayın, Farkı Hissedin",
+      "subtitle": "Araç kiralama, VIP transfer, tekne ve villa kiralama hizmetleri ile unutulmaz bir tatil deneyimi yaşayın.",
+      "cta": "Hizmetlerimizi Keşfedin"
+    },
+    "services": {
+      "title": "Size nasıl yardımcı olabiliriz?",
+      "subtitle": "Size özel turizm çözümleri sunuyoruz"
+    },
+    "about": {
+      "title": "Hakkımızda",
+      "description1": "RentBuy Antalya olarak, Antalya'da turizm sektöründe uzun yıllardır hizmet veren deneyimli bir ekibiz.",
+      "description2": "Araç kiralama, VIP transfer, tekne ve villa kiralama hizmetlerinde güvenilir çözümler sunarak müşterilerimizin memnuniyetini ön planda tutuyoruz.",
+      "description3": "Kaliteli hizmet anlayışımız ve geniş araç filomuzla unutulmaz tatil deneyimleri yaşatmayı hedefliyoruz."
+    }
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "subtitle": "Merak ettiğiniz soruların yanıtları burada",
+    "items": [
+      {
+        "question": "Rezervasyon nasıl yapılır?",
+        "answer": "WhatsApp üzerinden bize mesaj atarak veya telefon ile arayarak rezervasyon yapabilirsiniz. Hizmet detaylarını paylaştıktan sonra rezervasyonunuz onaylanacaktır."
+      },
+      {
+        "question": "Ödeme seçenekleri nelerdir?",
+        "answer": "Nakit, kredi kartı ve havale/EFT ile ödeme yapabilirsiniz. Bazı hizmetler için peşin ödeme gerekebilir."
+      },
+      {
+        "question": "İptal ve iade koşulları nasıl?",
+        "answer": "İptal koşulları hizmete göre değişkenlik gösterir. Rezervasyon sırasında iptal koşulları size detaylı olarak bildirilecektir."
+      },
+      {
+        "question": "Araç kiralama için yaş sınırı var mı?",
+        "answer": "Araç kiralama için minimum 21 yaşında olmanız ve en az 2 yıllık ehliyet deneyiminiz bulunması gerekir."
+      },
+      {
+        "question": "Villa ve apart kiralamalarda temizlik dahil mi?",
+        "answer": "Evet, tüm villa ve apart kiralamalarda başlangıç temizliği dahildir. Konaklama süreniz boyunca ekstra temizlik hizmeti de talep edebilirsiniz."
+      },
+      {
+        "question": "VIP transfer hizmeti hangi bölgeleri kapsıyor?",
+        "answer": "Antalya havalimanından şehir merkezi, Kemer, Belek, Side ve Alanya bölgelerine VIP transfer hizmeti sunuyoruz."
+      }
+    ],
+    "contactTitle": "Sorunuzun cevabını bulamadınız mı?",
+    "contactDescription": "Bizimle iletişime geçin, size yardımcı olmaktan memnuniyet duyarız.",
+    "whatsappButton": "WhatsApp ile İletişim",
+    "phoneButton": "Telefon ile Ara"
+  },
+  "services": {
+    "rentACar": {
+      "title": "Araç Kiralama",
+      "description": "Araç segmenti seçiniz",
+      "segments": {
+        "economic": {
+          "name": "Ekonomik Araçlar",
+          "category": "Economic",
+          "features": ["Manuel Vites", "Klima", "Yakıt Tasarruflu"]
+        },
+        "midClass": {
+          "name": "Orta Sınıf Araçlar", 
+          "category": "Mid-Class",
+          "features": ["Otomatik Vites", "GPS", "Bluetooth"]
+        },
+        "premium": {
+          "name": "Lüks Araçlar",
+          "category": "Premium", 
+          "features": ["Deri Koltuk", "Sunroof", "Premium Ses"]
+        },
+        "atvJeep": {
+          "name": "ATV & Jeep",
+          "category": "Adventure",
+          "features": ["4x4", "Offroad", "Güçlü Motor"]
+        }
+      },
+      "features": {
+        "standardTitle": "Tüm Araçlarda Standart",
+        "insurance": "Tam Sigorta",
+        "fullTank": "Tam Depo",
+        "gps": "GPS Navigasyon",
+        "support": "7/24 Destek"
+      },
+      "common": {
+        "perDay": "₺/Gün",
+        "available": "Müsait",
+        "notAvailable": "Müsait Değil",
+        "viewDetails": "Detayları Gör",
+        "bookNow": "Hemen Rezervasyon Yap"
+      }
+    },
+    "vipTransfer": {
+      "title": "VIP Transfer Hizmetlerimiz",
+      "description": "Aracınızı seçin",
+      "routes": {
+        "airportHotel": {
+          "name": "Havalimanı - Otel",
+          "route": "Antalya Havalimanı → Şehir Merkezi"
+        },
+        "hotelAirport": {
+          "name": "Otel - Havalimanı", 
+          "route": "Şehir Merkezi → Antalya Havalimanı"
+        },
+        "cityTour": {
+          "name": "Şehir Turu",
+          "route": "Antalya Merkez - Kaleiçi - Marina"
+        },
+        "sideTransfer": {
+          "name": "Side Transfer",
+          "route": "Antalya Havalimanı → Side"
+        }
+      },
+      "features": {
+        "standardTitle": "Tüm Transferlerde Standart",
+        "aircondition": "Klima",
+        "wifi": "WiFi",
+        "bottledWater": "Su İkramı",
+        "meetAndGreet": "Karşılama Servisi"
+      },
+      "vehicleInfo": {
+        "duration": "Süre",
+        "vehicleType": "Araç Tipi", 
+        "capacity": "Kapasite",
+        "person": "kişi"
+      }
+    },
+    "boatRental": {
+      "title": "Tekne Kiralama Bölgeleri",
+      "description": "İlgilendiğiniz bölgeyi seçin",
+      "selectLocation": "Bölge Seçin",
+      "locations": {
+        "antalya": "Antalya",
+        "kemer": "Kemer", 
+        "kas": "Kaş",
+        "fethiye": "Fethiye",
+        "bodrum": "Bodrum"
+      },
+      "locationDescriptions": {
+        "antalya": "Akdeniz'in incisi Antalya'da tekne kiralama",
+        "kemer": "Kemer'de doğa ile iç içe tekne turu",
+        "kas": "Kaş'ın büyülü koylarında tekne keyfi",
+        "fethiye": "Fethiye'nin eşsiz mavi yolculuğu",
+        "bodrum": "Bodrum'da lüks tekne deneyimi"
+      },
+      "backToLocations": "Bölgelere Geri Dön",
+      "boatsAvailable": "tekne mevcut",
+      "boatsFound": "tekne bulundu",
+      "boatTypes": {
+        "yacht": "Yat",
+        "sailboat": "Yelkenli",
+        "motorboat": "Motor Bot",
+        "catamaran": "Katamaran",
+        "gulet": "Gulet"
+      },
+      "boatInfo": {
+        "capacity": "Kapasite",
+        "length": "Uzunluk",
+        "location": "Konum",
+        "perDay": "gün",
+        "meters": "metre",
+        "people": "kişi"
+      },
+      "features": {
+        "standardTitle": "Tüm Teknelerde Standart",
+        "captain": "Kaptan",
+        "fuel": "Yakıt",
+        "insurance": "Sigorta", 
+        "equipment": "Ekipman"
+      }
+    },
+    "villaRental": {
+      "title": "Villa Kiralama",
+      "description": "Hayalinizdeki villa tatili",
+      "seasonalPricing": {
+        "title": "Sezonluk Fiyatlandırma",
+        "winter": {
+          "title": "Kış Sezonu",
+          "months": "Aralık - Şubat",
+          "discount": "-30%"
+        },
+        "spring": {
+          "title": "İlkbahar",
+          "months": "Mart - Mayıs",
+          "discount": "Normal"
+        },
+        "summer": {
+          "title": "Yaz Sezonu",
+          "months": "Haziran - Ağustos",
+          "discount": "+50%"
+        },
+        "autumn": {
+          "title": "Sonbahar",
+          "months": "Eylül - Kasım",
+          "discount": "+20%"
+        }
+      },
+      "servicesIncluded": {
+        "cleaning": {
+          "title": "Temizlik Hizmeti",
+          "description": "Günlük temizlik ve çamaşır değişimi dahil. Hijyen garantisi."
+        },
+        "transfer": {
+          "title": "Transfer Hizmeti",
+          "description": "Havaalanı karşılama ve konaklama yerine transfer dahil."
+        },
+        "support": {
+          "title": "24/7 Destek",
+          "description": "Konaklama süresince 7/24 yardım ve destek hizmeti."
+        }
+      }
+    },
+    "apartRental": {
+      "title": "Apart Kiralama Hizmetlerimiz",
+      "description": "Eviniz gibi rahat konaklama"
+    },
+    "propertiesForSale": {
+      "title": "Emlak Satış",
+      "description": "Yatırım ve yaşam fırsatları"
+    }
+  },
+  "footer": {
+    "description": "Antalya'nın en güvenilir turizm partneri. Araç kiralama, VIP transfer, tekne ve villa kiralama hizmetleri ile unutulmaz deneyimler sunuyoruz.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "ourServices": "Hizmetlerimiz",
+    "contactInfo": "İletişim Bilgileri",
+    "copyright": "Tüm hakları saklıdır.",
+    "privacyPolicy": "Gizlilik Politikası",
+    "termsOfService": "Kullanım Şartları",
+    "location": "Antalya, Türkiye",
+    "instagramHandle": "@rentbuyantalya"
+  },
+  "features": {
+    "standardTitle": "Tüm Araçlarda Standart",
+    "insurance": "Kasko Sigortası", 
+    "fullTank": "Dolu Depo Teslim",
+    "gps": "GPS Navigasyon",
+    "support": "7/24 Destek"
+  },
+  "profile": {
+    "title": "Profilim",
+    "welcome": "Hoş geldiniz",
+    "profileInfo": "Profil Bilgilerim",
+    "pastServices": "Geçmiş Hizmetlerim",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "registrationDate": "Kayıt Tarihi",
+    "emailStatus": "E-posta Durumu",
+    "verified": "Onaylandı",
+    "pending": "Onay Bekliyor",
+    "signOut": "Çıkış Yap",
+    "loadingReservations": "Rezervasyonlar yükleniyor...",
+    "noReservations": "Henüz hiç rezervasyonunuz bulunmamaktadır.",
+    "startDate": "Başlangıç",
+    "endDate": "Bitiş",
+    "totalPrice": "Toplam Fiyat",
+    "reservationDate": "Rezervasyon",
+    "status": {
+      "confirmed": "Onaylandı",
+      "pending": "Beklemede",
+      "cancelled": "İptal Edildi",
+      "completed": "Tamamlandı"
+    },
+    "notSpecified": "Belirtilmemiş"
+  },
+  "membership": {
+    "title": "Üye Ol",
+    "benefits": "Üye olun, özel kampanyalardan yararlanın",
+    "form": {
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "birthDate": "Doğum Tarihi",
+      "marketingConsent": "Kampanya ve duyurular için e-posta almayı kabul ediyorum",
+      "submit": "Üye Ol"
+    }
+  }
+}
