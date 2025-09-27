@@ -69,12 +69,7 @@ export default async function HomePage({ params }: { params: Params }) {
 
   return (
     <>
-      {/* Hero Section */}
-      <HeroSection 
-        whatsappNumber={process.env.NEXT_PUBLIC_WHATSAPP}
-        instagramUrl={process.env.NEXT_PUBLIC_INSTAGRAM_URL}
-        instagramUrl2={process.env.NEXT_PUBLIC_INSTAGRAM_URL_2}
-      />
+      
 
       {/* Services Section - Compact for mobile, moves up close to hero */}
       <section className="py-4 sm:py-8 lg:py-12" style={{background: 'var(--dark-bg)'}}>

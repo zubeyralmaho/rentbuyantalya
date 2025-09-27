@@ -147,8 +147,8 @@ export default function ReservationForm({
             type="text"
             value={formData.customer_name}
             onChange={(e) => handleInputChange('customer_name', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 ${
-              errors.customer_name ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-orange-500'
+            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-white ${
+              errors.customer_name ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-white'
             }`}
             disabled={loading}
           />
@@ -167,8 +167,8 @@ export default function ReservationForm({
             type="email"
             value={formData.customer_email}
             onChange={(e) => handleInputChange('customer_email', e.target.value)}
-            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 ${
-              errors.customer_email ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-orange-500'
+            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-white ${
+              errors.customer_email ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-white'
             }`}
             disabled={loading}
           />
@@ -188,8 +188,8 @@ export default function ReservationForm({
             value={formData.customer_phone}
             onChange={(e) => handleInputChange('customer_phone', e.target.value)}
             placeholder="+90 555 123 45 67"
-            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 ${
-              errors.customer_phone ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-orange-500'
+            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-white ${
+              errors.customer_phone ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-white'
             }`}
             disabled={loading}
           />
@@ -210,8 +210,8 @@ export default function ReservationForm({
               min={today}
               value={formData.start_date}
               onChange={(e) => handleInputChange('start_date', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 ${
-                errors.start_date ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-orange-500'
+              className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-white ${
+                errors.start_date ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-white'
               }`}
               disabled={loading}
             />
@@ -230,8 +230,8 @@ export default function ReservationForm({
               min={formData.start_date || today}
               value={formData.end_date}
               onChange={(e) => handleInputChange('end_date', e.target.value)}
-              className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 ${
-                errors.end_date ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-orange-500'
+              className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-white ${
+                errors.end_date ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-white'
               }`}
               disabled={loading}
             />
@@ -253,7 +253,7 @@ export default function ReservationForm({
             max="20"
             value={formData.guests_count}
             onChange={(e) => handleInputChange('guests_count', parseInt(e.target.value) || 1)}
-            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 ${
+            className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-white ${
               errors.guests_count ? 'border-red-300 focus:border-red-500' : 'border-gray-300 focus:border-orange-500'
             }`}
             disabled={loading}

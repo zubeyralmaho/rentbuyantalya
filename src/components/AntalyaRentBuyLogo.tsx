@@ -17,7 +17,7 @@ type Props = {
 
 export default function AntalyaRentBuyLogo({
   width = 320,
-  accent = "#F97316",     // tailwind orange-500 benzeri
+  accent = "#FFFFFF",     // white color
   textColor = "#FFFFFF",
   background = "transparent",
   className,

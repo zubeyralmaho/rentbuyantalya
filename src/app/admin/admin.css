@@ -254,8 +254,8 @@ html, body {
 }
 
 .admin-icon.orange {
-  background: #fed7aa;
-  color: #ea580c;
+  background: #f8f9fa;
+  color: #ffffff;
 }
 
 .admin-card-content h3 {
@@ -317,7 +317,7 @@ html, body {
 }
 
 .admin-stat-card.orange .stat-number {
-  color: #f56500;
+  color: #ffffff;
 }
 
 .admin-stat-card.red .stat-number {

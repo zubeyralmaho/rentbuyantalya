@@ -4,17 +4,18 @@
   --background: #0a0a0a;
   --foreground: #ffffff;
   
-  /* Dark Theme Brand Colors */
-  --primary-50: #fff7ed;
-  --primary-100: #ffedd5;
-  --primary-500: #f97316;
-  --primary-600: #ea580c;
-  --primary-700: #c2410c;
-  --primary-900: #7c2d12;
+  /* Dark Theme Brand Colors - Updated to White */
+  --primary-50: #ffffff;
+  --primary-100: #ffffff;
+  --primary-500: #ffffff;
+  --primary-600: #f8f9fa;
+  --primary-700: #f1f3f4;
+  --primary-900: #e8eaed;
   
-  --accent-400: #fb923c;
-  --accent-500: #f97316;
-  --accent-600: #ea580c;
+  --accent-400: #ffffff;
+  --accent-500: #ffffff;
+  --accent-600: #f8f9fa;
+  --accent-700: #f1f3f4;
   
   /* Blue Colors */
   --blue-400: #60a5fa;
@@ -46,6 +47,7 @@
   --dark-text: #ffffff;
   --dark-text-secondary: #e5e5e5;
   --dark-text-muted: #a3a3a3;
+  --dark-border: #333333;
 }
 
 /* Line clamp utility */
@@ -72,7 +74,7 @@ body {
 }
 
 .hero-overlay {
-  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1) 0%, rgba(234, 88, 12, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(248, 249, 250, 0.05) 100%);
 }
 
 /* Service Card Styles */
@@ -90,7 +92,7 @@ body {
 /* Mobile-first touch interactions */
 .service-card:active {
   transform: translateY(2px) scale(0.98);
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
   border-color: var(--accent-500);
 }
 
@@ -98,7 +100,7 @@ body {
 @media (hover: hover) and (pointer: fine) {
   .service-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 40px rgba(249, 115, 22, 0.2);
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.2);
     border-color: var(--accent-500);
   }
   
@@ -126,11 +128,11 @@ body {
 /* Button Variants */
 .btn-primary {
   background: linear-gradient(45deg, var(--accent-600), var(--accent-500));
-  color: white;
+  color: #1f2937;
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
   font-weight: 600;
-  border: none;
+  border: 1px solid #e5e7eb;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
@@ -140,15 +142,15 @@ body {
 /* Mobile touch interactions */
 .btn-primary:active {
   transform: scale(0.96);
-  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.4);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
 }
 
 /* Desktop hover (only for devices with mouse) */
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover {
-    background: linear-gradient(45deg, var(--accent-700), var(--accent-600));
+    background: linear-gradient(45deg, var(--accent-600), var(--accent-500));
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
   }
 }
 

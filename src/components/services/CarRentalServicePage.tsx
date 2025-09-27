@@ -32,38 +32,44 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
 
   // Car segments based on user requirements - aligned with DB slugs
   const segments: Array<{
-    id: 'economic' | 'mid-class' | 'comfort' | 'premium' | 'atv-jeep';
+    id: 'economic' | 'comfort' | 'premium' | '8-plus-1' | 'atv-jeep';
     name: string;
+    nameEn: string;
     description: string;
     icon: string;
   }> = [
     {
       id: 'economic',
-      name: 'Ekonomik',
+      name: 'Ekonomik Segment',
+      nameEn: 'Eco Class',
       description: 'Şehir içi ve kısa seyahatler için en uygun fiyatlı araçlar',
       icon: '💰',
     },
     {
-      id: 'mid-class',
-      name: 'Orta',
-      description: 'Konfor ve ekonomi dengesini sunan modeller',
-      icon: '🚗',
-    },
-    {
       id: 'comfort',
       name: 'Komfort',
+      nameEn: 'Comfort Class',
       description: 'Üst düzey konfor ve teknolojiye sahip araçlar',
       icon: '✨',
     },
     {
       id: 'premium',
-      name: 'Premium',
+      name: 'Üst Segment',
+      nameEn: 'Premium Class',
       description: 'Lüks ve prestij segmenti',
       icon: '🏎️',
     },
     {
+      id: '8-plus-1',
+      name: '8+1 Kişilik',
+      nameEn: '8+1 Pax',
+      description: 'Büyük grup ve aile seyahatleri için geniş araçlar',
+      icon: '🚐',
+    },
+    {
       id: 'atv-jeep',
-      name: 'ATV JEEP',
+      name: 'ATV Jeep',
+      nameEn: 'ATV Jeep',
       description: 'Macera ve off-road deneyimi için ATV ve Jeep',
       icon: '🛻',
     }
@@ -74,9 +80,9 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
   const mapCategoryToSegmentId = (category: string): typeof segments[number]['id'] | null => {
     const n = normalize(category);
     if (['ekonomik', 'economy', 'economic', 'budget'].includes(n)) return 'economic';
-    if (['orta', 'mid', 'mid-class', 'middle'].includes(n)) return 'mid-class';
-    if (['komfort', 'comfort', 'comfort-class'].includes(n)) return 'comfort';
+    if (['orta', 'mid', 'mid-class', 'middle', 'komfort', 'comfort', 'comfort-class'].includes(n)) return 'comfort';
     if (['premium', 'luxury', 'ust', 'ust-segment', 'upper', 'uper', 'u-st'].includes(n)) return 'premium';
+    if (['8-1', '8-plus-1', '8-1-kisilik', '8-1-pax', 'minibus', 'minivan', 'van', 'large', 'big', 'grup'].includes(n)) return '8-plus-1';
     if (['atv-jeep', 'atv', 'jeep', 'atv-jeep-4x4', 'atv-jeep-off-road', 'atv-jeep-atv/jeep', 'atv-jeep-atv-jeep', 'atv/jeep', 'off-road'].includes(n)) return 'atv-jeep';
     return null;
   };
@@ -94,20 +100,20 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
             if (segSlug) {
               const s = segSlug.toLowerCase();
               if (s === 'economic' || s === 'economy' || s === 'ekonomik') return 'economic';
-              if (s === 'mid-class' || s === 'orta') return 'mid-class';
-              if (s === 'comfort' || s === 'komfort') return 'comfort';
+              if (s === 'mid-class' || s === 'orta' || s === 'comfort' || s === 'komfort') return 'comfort';
               if (s === 'premium' || s === 'ust' || s === 'luxury') return 'premium';
+              if (s === '8-plus-1' || s === '8-1' || s === 'minibus' || s === 'van') return '8-plus-1';
               if (s === 'atv-jeep' || s === 'atv' || s === 'jeep') return 'atv-jeep';
             }
             const fset = new Set(features);
             // ATV/JEEP if clear off-road signals
             if (['4wd','4x4','off_road','off-road','atv','jeep'].some(k => fset.has(k))) return 'atv-jeep';
+            // 8+1 if large capacity or minibus features
+            if (['8_seats','9_seats','minibus','van','large_capacity','group_transport','8-1','8_1'].some(k => fset.has(k))) return '8-plus-1';
             // Premium if luxury features
             if (['leather_seats','premium_sound','sunroof','navigation','nav','massage_seats'].some(k => fset.has(k))) return 'premium';
-            // Comfort if comfort-related
-            if (['comfort','comfort_class','wide_body','large_trunk'].some(k => fset.has(k))) return 'comfort';
-            // Mid-class if typical modern features
-            if (['automatic_transmission','gps','bluetooth','cruise_control'].some(k => fset.has(k))) return 'mid-class';
+            // Comfort if comfort-related or typical modern features
+            if (['comfort','comfort_class','wide_body','large_trunk','automatic_transmission','gps','bluetooth','cruise_control'].some(k => fset.has(k))) return 'comfort';
             // Otherwise economic
             return 'economic';
           };
@@ -206,21 +212,18 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
       {/* Segment Selection */}
       {!selectedSegment && (
         <div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 grid-cols-3 md:grid-cols-5">
             {segments.map((segment) => (
               <div 
                 key={segment.id}
                 onClick={() => setSelectedSegment(segment.id)}
-                className="service-card p-6 text-center cursor-pointer hover:scale-105 transition-transform"
+                className="bg-white rounded-lg shadow-md p-3 text-center cursor-pointer hover:scale-105 hover:shadow-lg transition-all border border-gray-100"
               >
-                <div className="text-4xl mb-4">{segment.icon}</div>
-                <h4 className="text-lg font-bold mb-2" style={{color: 'var(--dark-text)'}}>
-                  {segment.name}
+                <div className="text-2xl mb-2">{segment.icon}</div>
+                <h4 className="text-sm font-bold mb-1 text-gray-800">
+                  {locale === 'en' ? segment.nameEn : segment.name}
                 </h4>
-                <p className="text-sm" style={{color: 'var(--dark-text-muted)'}}>
-                  {segment.description}
-                </p>
-                <div className="mt-3 text-xs" style={{color: 'var(--dark-text-muted)'}}>
+                <div className="mt-1 text-xs text-gray-600">
                   {itemsBySegment[segment.id]?.length || 0} araç
                 </div>
               </div>
@@ -248,7 +251,11 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
               ← Geri Dön
             </button>
             <h3 className="text-xl font-bold" style={{color: 'var(--dark-text)'}}>
-              {segments.find(s => s.id === selectedSegment)?.name} Araçları
+              {(() => {
+                const segment = segments.find(s => s.id === selectedSegment);
+                const segmentName = locale === 'en' ? segment?.nameEn : segment?.name;
+                return `${segmentName} Araçları`;
+              })()}
             </h3>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
