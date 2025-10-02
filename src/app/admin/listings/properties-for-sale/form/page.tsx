@@ -146,7 +146,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
       }
     } catch (error) {
       console.error('Error fetching listing:', error);
-      alert('Hata: Ä°lan bilgileri yÃ¼klenemedi');
+      alert('Hata: İlan bilgileri yüklenemedi');
     }
   };
 
@@ -170,7 +170,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
       });
 
       if (response.ok) {
-        alert(isEdit ? 'Emlak ilanÄ± gÃ¼ncellendi!' : 'Emlak ilanÄ± oluÅŸturuldu!');
+        alert(isEdit ? 'Emlak ilanı güncellendi!' : 'Emlak ilanı oluşturuldu!');
         router.push('/admin/listings/properties-for-sale');
       } else {
         const error = await response.json();
@@ -178,7 +178,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
       }
     } catch (error) {
       console.error('Error saving listing:', error);
-      alert('Hata: Ä°lan kaydedilemedi');
+      alert('Hata: İlan kaydedilemedi');
     } finally {
       setLoading(false);
     }
@@ -304,18 +304,18 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
 
           <div className="tab-content">
             <div className="form-group">
-              <label>BaÅŸlÄ±k ({LOCALES.find(l => l.code === activeTab)?.name})</label>
+              <label>Başlık ({LOCALES.find(l => l.code === activeTab)?.name})</label>
               <input
                 type="text"
                 value={formData.translations[activeTab]?.title || ''}
                 onChange={(e) => handleTranslationChange(activeTab, 'title', e.target.value)}
-                placeholder={`Ã–rn: ${formData.metadata.propertyType} - ${formData.location}`}
+                placeholder={`Örn: ${formData.metadata.propertyType} - ${formData.location}`}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>AÃ§Ä±klama ({LOCALES.find(l => l.code === activeTab)?.name})</label>
+              <label>Açıklama ({LOCALES.find(l => l.code === activeTab)?.name})</label>
               <textarea
                 value={formData.translations[activeTab]?.description || ''}
                 onChange={(e) => handleTranslationChange(activeTab, 'description', e.target.value)}
@@ -331,7 +331,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
           <h3>Emlak Bilgileri</h3>
           <div className="specs-grid">
             <div className="form-group">
-              <label>Emlak TÃ¼rÃ¼</label>
+              <label>Emlak Türü</label>
               <select
                 value={formData.metadata.propertyType}
                 onChange={(e) => handleMetadataChange('propertyType', e.target.value)}
@@ -355,7 +355,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>Yatak OdasÄ±</label>
+              <label>Yatak Odası</label>
               <input
                 type="number"
                 value={formData.metadata.bedrooms}
@@ -377,7 +377,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>Kat SayÄ±sÄ±</label>
+              <label>Kat Sayısı</label>
               <input
                 type="number"
                 value={formData.metadata.floors}
@@ -388,7 +388,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>YapÄ±m YÄ±lÄ±</label>
+              <label>Yapım Yılı</label>
               <input
                 type="number"
                 value={formData.metadata.buildYear}
@@ -402,24 +402,24 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
 
         {/* Pricing Section */}
         <div className="pricing-section">
-          <h3>FiyatlandÄ±rma</h3>
+          <h3>Fiyatlandırma</h3>
           
           <div className="form-group">
-            <label>Fiyat TÃ¼rÃ¼</label>
+            <label>Fiyat Türü</label>
             <select
               value={formData.metadata.priceType}
               onChange={(e) => handleMetadataChange('priceType', e.target.value)}
               required
             >
-              <option value="sale_price">SatÄ±ÅŸ FiyatÄ±</option>
-              <option value="monthly_rent">AylÄ±k Kira</option>
+              <option value="sale_price">Satış Fiyatı</option>
+              <option value="monthly_rent">Aylık Kira</option>
             </select>
           </div>
 
           <div className="price-grid">
             <div className="form-group">
               <label>
-                {formData.metadata.priceType === 'sale_price' ? 'SatÄ±ÅŸ FiyatÄ± (â‚¬)' : 'AylÄ±k Kira (â‚¬)'}
+                {formData.metadata.priceType === 'sale_price' ? 'Satış Fiyatı (€)' : 'Aylık Kira (€)'}
               </label>
               <input
                 type="number"
@@ -439,7 +439,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
             {formData.metadata.priceType === 'monthly_rent' && (
               <>
                 <div className="form-group">
-                  <label>3 AylÄ±k Kira (â‚¬)</label>
+                  <label>3 Aylık Kira (€)</label>
                   <input
                     type="number"
                     value={formData.price_per_week}
@@ -449,7 +449,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
                 </div>
 
                 <div className="form-group">
-                  <label>YÄ±llÄ±k Kira (â‚¬)</label>
+                  <label>Yıllık Kira (€)</label>
                   <input
                     type="number"
                     value={formData.price_per_month}
@@ -470,7 +470,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
               type="text"
               value={formData.location}
               onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-              placeholder="Ã–rn: Lara, Antalya"
+              placeholder="Örn: Lara, Antalya"
               required
             />
           </div>
@@ -478,10 +478,10 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
 
         {/* Property Features */}
         <div className="features-section">
-          <h3>Emlak Ã–zellikleri</h3>
+          <h3>Emlak Özellikleri</h3>
           
           <div className="amenities-checkboxes">
-            <h4>Temel Ã–zellikler</h4>
+            <h4>Temel Özellikler</h4>
             <div className="checkbox-grid">
               {Object.entries(formData.metadata).map(([key, value]) => {
                 if (typeof value !== 'boolean') return null;
@@ -516,7 +516,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
           </div>
 
           <div className="extra-features">
-            <h4>Ekstra Ã–zellikler</h4>
+            <h4>Ekstra Özellikler</h4>
             <div className="features-checkboxes">
               {PROPERTY_FEATURES.map(feature => (
                 <label key={feature} className="checkbox-item">
@@ -628,7 +628,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
             disabled={loading}
             className="submit-button"
           >
-            {loading ? 'Kaydediliyor...' : (isEdit ? 'GÃ¼ncelle' : 'Ä°lan OluÅŸtur')}
+            {loading ? 'Kaydediliyor...' : (isEdit ? 'Güncelle' : 'İlan Oluştur')}
           </button>
         </div>
       </form>
@@ -650,7 +650,7 @@ function PropertyFormLoading() {
     <div className="admin-container">
       <div className="admin-card">
         <div className="flex justify-center items-center py-12">
-          <div className="text-lg">YÃ¼kleniyor...</div>
+          <div className="text-lg">Yükleniyor...</div>
         </div>
       </div>
     </div>

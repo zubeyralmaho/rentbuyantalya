@@ -45,10 +45,10 @@ interface BoatFormData {
 }
 
 const LOCALES = [
-  { code: 'tr', name: 'TÃ¼rkÃ§e' },
+  { code: 'tr', name: 'Türkçe' },
   { code: 'en', name: 'English' },
-  { code: 'ru', name: 'Ğ ÑƒÑÑĞºĞ¸Ğ¹' },
-  { code: 'ar', name: 'Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©' }
+  { code: 'ru', name: 'Русский' },
+  { code: 'ar', name: 'العربية' }
 ];
 
 const BOAT_FEATURES = [
@@ -287,20 +287,20 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
   return (
     <div className="boat-form-container">
       <div className="form-header">
-        <h1>{isEdit ? 'Tekne Ä°lanÄ±nÄ± DÃ¼zenle' : 'Yeni Tekne Ä°lanÄ± Ekle'}</h1>
+        <h1>{isEdit ? 'Tekne İlanını Düzenle' : 'Yeni Tekne İlanı Ekle'}</h1>
         <button
           type="button"
           onClick={() => router.push('/admin/listings/boat-rental')}
           className="back-button"
         >
-          â† Geri DÃ¶n
+          ← Geri Dön
         </button>
       </div>
 
       <form onSubmit={handleSubmit} className="boat-form">
         {/* Translation Tabs */}
         <div className="translation-section">
-          <h3>Ä°lan Bilgileri</h3>
+          <h3>İlan Bilgileri</h3>
           <div className="tab-buttons">
             {LOCALES.map(locale => (
               <button
@@ -316,18 +316,18 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
 
           <div className="tab-content">
             <div className="form-group">
-              <label>BaÅŸlÄ±k ({LOCALES.find(l => l.code === activeTab)?.name})</label>
+              <label>Başlık ({LOCALES.find(l => l.code === activeTab)?.name})</label>
               <input
                 type="text"
                 value={formData.translations[activeTab]?.title || ''}
                 onChange={(e) => handleTranslationChange(activeTab, 'title', e.target.value)}
-                placeholder={`Ã–rn: ${formData.metadata.brand} ${formData.metadata.model}`}
+                placeholder={`Örn: ${formData.metadata.brand} ${formData.metadata.model}`}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>AÃ§Ä±klama ({LOCALES.find(l => l.code === activeTab)?.name})</label>
+              <label>Açıklama ({LOCALES.find(l => l.code === activeTab)?.name})</label>
               <textarea
                 value={formData.translations[activeTab]?.description || ''}
                 onChange={(e) => handleTranslationChange(activeTab, 'description', e.target.value)}
@@ -343,7 +343,7 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
           <h3>Tekne Bilgileri</h3>
           <div className="specs-grid">
             <div className="form-group">
-              <label>Tekne TÃ¼rÃ¼</label>
+              <label>Tekne Türü</label>
               <select
                 value={formData.metadata.boatType}
                 onChange={(e) => handleMetadataChange('boatType', e.target.value)}
@@ -362,7 +362,7 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
                 onChange={(e) => handleMetadataChange('brand', e.target.value)}
                 required
               >
-                <option value="">Marka SeÃ§in</option>
+                <option value="">Marka Seçin</option>
                 {BOAT_BRANDS.map(brand => (
                   <option key={brand} value={brand}>{brand}</option>
                 ))}
@@ -380,7 +380,7 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>YÄ±l</label>
+              <label>Yıl</label>
               <input
                 type="number"
                 value={formData.metadata.year}
@@ -410,13 +410,13 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
                 type="text"
                 value={formData.metadata.engine}
                 onChange={(e) => handleMetadataChange('engine', e.target.value)}
-                placeholder="Ã–rn: 2 x 370 HP Volvo Penta"
+                placeholder="Örn: 2 x 370 HP Volvo Penta"
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>Kabin SayÄ±sÄ±</label>
+              <label>Kabin Sayısı</label>
               <input
                 type="number"
                 value={formData.metadata.cabins}
@@ -427,7 +427,7 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>Banyo SayÄ±sÄ±</label>
+              <label>Banyo Sayısı</label>
               <input
                 type="number"
                 value={formData.metadata.bathrooms}
@@ -441,10 +441,10 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
 
         {/* Pricing Section */}
         <div className="pricing-section">
-          <h3>FiyatlandÄ±rma</h3>
+          <h3>Fiyatlandırma</h3>
           <div className="price-grid">
             <div className="form-group">
-              <label>GÃ¼nlÃ¼k Fiyat (â‚¬)</label>
+              <label>Günlük Fiyat (€)</label>
               <input
                 type="number"
                 value={formData.price_per_day}
@@ -455,7 +455,7 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>HaftalÄ±k Fiyat (â‚¬)</label>
+              <label>Haftalık Fiyat (€)</label>
               <input
                 type="number"
                 value={formData.price_per_week}
@@ -465,7 +465,7 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>AylÄ±k Fiyat (â‚¬)</label>
+              <label>Aylık Fiyat (€)</label>
               <input
                 type="number"
                 value={formData.price_per_month}
@@ -485,13 +485,13 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
                 type="text"
                 value={formData.location}
                 onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-                placeholder="Ã–rn: KaleiÃ§i Marina, Antalya"
+                placeholder="Örn: Kaleiçi Marina, Antalya"
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>Kapasite (KiÅŸi)</label>
+              <label>Kapasite (Kişi)</label>
               <input
                 type="number"
                 value={formData.capacity}
@@ -506,7 +506,7 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
 
         {/* Boat Features */}
         <div className="features-section">
-          <h3>Tekne Ã–zellikleri</h3>
+          <h3>Tekne Özellikleri</h3>
           
           <div className="amenities-checkboxes">
             <h4>Hizmetler ve Olanaklar</h4>
@@ -516,14 +516,14 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
                 
                 const labels: { [key: string]: string } = {
                   captainIncluded: 'Kaptan Dahil',
-                  fuelIncluded: 'YakÄ±t Dahil',
+                  fuelIncluded: 'Yakıt Dahil',
                   wifi: 'WiFi',
                   airConditioning: 'Klima',
                   soundSystem: 'Ses Sistemi',
                   gps: 'GPS Navigasyon',
-                  fishingEquipment: 'BalÄ±k Tutma EkipmanÄ±',
-                  snorkelEquipment: 'Ånorkel EkipmanÄ±',
-                  waterSports: 'Su SporlarÄ±',
+                  fishingEquipment: 'Balık Tutma Ekipmanı',
+                  snorkelEquipment: 'Şnorkel Ekipmanı',
+                  waterSports: 'Su Sporları',
                   kitchen: 'Mutfak'
                 };
 
@@ -542,7 +542,7 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
           </div>
 
           <div className="extra-features">
-            <h4>Ekstra Ã–zellikler</h4>
+            <h4>Ekstra Özellikler</h4>
             <div className="features-checkboxes">
               {BOAT_FEATURES.map(feature => (
                 <label key={feature} className="checkbox-item">
@@ -654,7 +654,7 @@ function BoatListingForm({ editId }: { editId?: string | null }) {
             disabled={loading}
             className="submit-button"
           >
-            {loading ? 'Kaydediliyor...' : (isEdit ? 'GÃ¼ncelle' : 'Ä°lan OluÅŸtur')}
+            {loading ? 'Kaydediliyor...' : (isEdit ? 'Güncelle' : 'İlan Oluştur')}
           </button>
         </div>
       </form>
@@ -676,7 +676,7 @@ function BoatFormLoading() {
     <div className="admin-container">
       <div className="admin-card">
         <div className="flex justify-center items-center py-12">
-          <div className="text-lg">YÃ¼kleniyor...</div>
+          <div className="text-lg">Yükleniyor...</div>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import FileUpload from '@/components/admin/FileUpload';
 import { uploadMultipleFiles, deleteFile, getStorageUrl, type UploadResult } from '@/lib/storage';
 import AvailabilityCalendar from '@/components/admin/AvailabilityCalendar';
 
+
 interface VipTransferFormData {
   translations: {
     [locale: string]: {
@@ -161,7 +162,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
       }
     } catch (error) {
       console.error('Error fetching listing:', error);
-      alert('Hata: Ä°lan bilgileri yÃ¼klenemedi');
+      alert('Hata: İlan bilgileri yüklenemedi');
     }
   };
 
@@ -185,7 +186,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
       });
 
       if (response.ok) {
-        alert(isEdit ? 'VIP transfer ilanÄ± gÃ¼ncellendi!' : 'VIP transfer ilanÄ± oluÅŸturuldu!');
+        alert(isEdit ? 'VIP transfer ilanı güncellendi!' : 'VIP transfer ilanı oluşturuldu!');
         router.push('/admin/listings/vip-transfer');
       } else {
         const error = await response.json();
@@ -193,7 +194,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
       }
     } catch (error) {
       console.error('Error saving listing:', error);
-      alert('Hata: Ä°lan kaydedilemedi');
+      alert('Hata: İlan kaydedilemedi');
     } finally {
       setLoading(false);
     }
@@ -354,18 +355,18 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
 
           <div className="tab-content">
             <div className="form-group">
-              <label>BaÅŸlÄ±k ({LOCALES.find(l => l.code === activeTab)?.name})</label>
+              <label>Başlık ({LOCALES.find(l => l.code === activeTab)?.name})</label>
               <input
                 type="text"
                 value={formData.translations[activeTab]?.title || ''}
                 onChange={(e) => handleTranslationChange(activeTab, 'title', e.target.value)}
-                placeholder={`Ã–rn: ${formData.metadata.vehicleType} - ${formData.metadata.brand}`}
+                placeholder={`Örn: ${formData.metadata.vehicleType} - ${formData.metadata.brand}`}
                 required
               />
             </div>
 
             <div className="form-group">
-              <label>AÃ§Ä±klama ({LOCALES.find(l => l.code === activeTab)?.name})</label>
+              <label>Açıklama ({LOCALES.find(l => l.code === activeTab)?.name})</label>
               <textarea
                 value={formData.translations[activeTab]?.description || ''}
                 onChange={(e) => handleTranslationChange(activeTab, 'description', e.target.value)}
@@ -378,10 +379,10 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
 
         {/* Vehicle Specifications */}
         <div className="vehicle-specs-section">
-          <h3>AraÃ§ Bilgileri</h3>
+          <h3>Araç Bilgileri</h3>
           <div className="specs-grid">
             <div className="form-group">
-              <label>AraÃ§ TÃ¼rÃ¼</label>
+              <label>Araç Türü</label>
               <select
                 value={formData.metadata.vehicleType}
                 onChange={(e) => handleMetadataChange('vehicleType', e.target.value)}
@@ -400,7 +401,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
                 onChange={(e) => handleMetadataChange('brand', e.target.value)}
                 required
               >
-                <option value="">Marka SeÃ§in</option>
+                <option value="">Marka Seçin</option>
                 {VEHICLE_BRANDS.map(brand => (
                   <option key={brand} value={brand}>{brand}</option>
                 ))}
@@ -418,7 +419,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>YÄ±l</label>
+              <label>Yıl</label>
               <input
                 type="number"
                 value={formData.metadata.year}
@@ -430,7 +431,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>Kapasite (KiÅŸi)</label>
+              <label>Kapasite (Kişi)</label>
               <input
                 type="number"
                 value={formData.capacity}
@@ -442,7 +443,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>Bekleme SÃ¼resi (Dakika)</label>
+              <label>Bekleme Süresi (Dakika)</label>
               <input
                 type="number"
                 value={formData.metadata.waitingTime}
@@ -456,26 +457,26 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
 
         {/* Pricing Section */}
         <div className="pricing-section">
-          <h3>FiyatlandÄ±rma</h3>
+          <h3>Fiyatlandırma</h3>
           
           <div className="form-group">
-            <label>Fiyat TÃ¼rÃ¼</label>
+            <label>Fiyat Türü</label>
             <select
               value={formData.metadata.priceType}
               onChange={(e) => handleMetadataChange('priceType', e.target.value)}
               required
             >
-              <option value="per_trip">Sefer BaÅŸÄ±</option>
+              <option value="per_trip">Sefer Başı</option>
               <option value="per_hour">Saatlik</option>
-              <option value="per_day">GÃ¼nlÃ¼k</option>
+              <option value="per_day">Günlük</option>
             </select>
           </div>
 
           <div className="price-grid">
             <div className="form-group">
               <label>
-                {formData.metadata.priceType === 'per_trip' ? 'Sefer FiyatÄ± (â‚¬)' : 
-                 formData.metadata.priceType === 'per_hour' ? 'Saatlik Fiyat (â‚¬)' : 'GÃ¼nlÃ¼k Fiyat (â‚¬)'}
+                {formData.metadata.priceType === 'per_trip' ? 'Sefer Fiyatı (€)' : 
+                 formData.metadata.priceType === 'per_hour' ? 'Saatlik Fiyat (€)' : 'Günlük Fiyat (€)'}
               </label>
               <input
                 type="number"
@@ -489,7 +490,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
             {formData.metadata.priceType !== 'per_trip' && (
               <>
                 <div className="form-group">
-                  <label>HaftalÄ±k Fiyat (â‚¬)</label>
+                  <label>Haftalık Fiyat (€)</label>
                   <input
                     type="number"
                     value={formData.price_per_week}
@@ -499,7 +500,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
                 </div>
 
                 <div className="form-group">
-                  <label>AylÄ±k Fiyat (â‚¬)</label>
+                  <label>Aylık Fiyat (€)</label>
                   <input
                     type="number"
                     value={formData.price_per_month}
@@ -515,12 +516,12 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
         {/* Location */}
         <div className="basic-info-section">
           <div className="form-group">
-            <label>Hizmet BÃ¶lgesi</label>
+            <label>Hizmet Bölgesi</label>
             <input
               type="text"
               value={formData.location}
               onChange={(e) => setFormData(prev => ({ ...prev, location: e.target.value }))}
-              placeholder="Ã–rn: Antalya ve Ã‡evresi"
+              placeholder="Örn: Antalya ve Çevresi"
               required
             />
           </div>
@@ -528,10 +529,10 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
 
         {/* Routes Section */}
         <div className="routes-section">
-          <h3>Hizmet RotalarÄ±</h3>
+          <h3>Hizmet Rotaları</h3>
           
           <div className="popular-routes">
-            <h4>PopÃ¼ler Rotalar</h4>
+            <h4>Popüler Rotalar</h4>
             <div className="routes-checkboxes">
               {POPULAR_ROUTES.map(route => (
                 <label key={route} className="checkbox-item">
@@ -550,13 +551,13 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
           </div>
 
           <div className="add-route">
-            <h4>Ã–zel Rota Ekle</h4>
+            <h4>Özel Rota Ekle</h4>
             <div className="add-route-input">
               <input
                 type="text"
                 value={newRoute}
                 onChange={(e) => setNewRoute(e.target.value)}
-                placeholder="Ã–zel rota aÃ§Ä±klamasÄ±..."
+                placeholder="Özel rota açıklaması..."
                 onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), addCustomRoute())}
               />
               <button type="button" onClick={addCustomRoute}>
@@ -567,7 +568,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
 
           {formData.metadata.routes.length > 0 && (
             <div className="selected-routes">
-              <h4>SeÃ§ili Rotalar</h4>
+              <h4>Seçili Rotalar</h4>
               {formData.metadata.routes.map(route => (
                 <span key={route} className="route-tag">
                   {route}
@@ -575,7 +576,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
                     type="button"
                     onClick={() => removeRoute(route)}
                   >
-                    Ã—
+                    ×
                   </button>
                 </span>
               ))}
@@ -585,7 +586,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
 
         {/* Service Features */}
         <div className="features-section">
-          <h3>Hizmet Ã–zellikleri</h3>
+          <h3>Hizmet Özellikleri</h3>
           
           <div className="amenities-checkboxes">
             <h4>Dahil Edilen Hizmetler</h4>
@@ -598,10 +599,10 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
                   airConditioning: 'Klima',
                   leather: 'Deri Koltuk',
                   miniBar: 'Mini Bar',
-                  childSeat: 'Ã‡ocuk KoltuÄŸu',
-                  luggage: 'Bagaj YardÄ±mÄ±',
-                  meetGreet: 'KarÅŸÄ±lama Hizmeti',
-                  flightTracking: 'UÃ§uÅŸ Takibi'
+                  childSeat: 'Çocuk Koltuğu',
+                  luggage: 'Bagaj Yardımı',
+                  meetGreet: 'Karşılama Hizmeti',
+                  flightTracking: 'Uçuş Takibi'
                 };
 
                 return (
@@ -636,13 +637,13 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
                   checked={formData.metadata.fuelIncluded}
                   onChange={(e) => handleMetadataChange('fuelIncluded', e.target.checked)}
                 />
-                <span>YakÄ±t Dahil</span>
+                <span>Yakıt Dahil</span>
               </label>
             </div>
           </div>
 
           <div className="extra-features">
-            <h4>Ekstra Ã–zellikler</h4>
+            <h4>Ekstra Özellikler</h4>
             <div className="features-checkboxes">
               {TRANSFER_FEATURES.map(feature => (
                 <label key={feature} className="checkbox-item">
@@ -754,7 +755,7 @@ function VipTransferListingForm({ editId }: { editId?: string | null }) {
             disabled={loading}
             className="submit-button"
           >
-            {loading ? 'Kaydediliyor...' : (isEdit ? 'GÃ¼ncelle' : 'Ä°lan OluÅŸtur')}
+            {loading ? 'Kaydediliyor...' : (isEdit ? 'Güncelle' : 'İlan Oluştur')}
           </button>
         </div>
       </form>
@@ -776,7 +777,7 @@ function VipTransferFormLoading() {
     <div className="admin-container">
       <div className="admin-card">
         <div className="flex justify-center items-center py-12">
-          <div className="text-lg">YÃ¼kleniyor...</div>
+          <div className="text-lg">Yükleniyor...</div>
         </div>
       </div>
     </div>
