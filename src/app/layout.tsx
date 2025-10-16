@@ -35,9 +35,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/rentbuyfavicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/rentbuyfavicon.ico" type="image/x-icon" />
-        <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap">
-        </script>
+        {/* Google Maps script will be loaded only when needed */}
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}

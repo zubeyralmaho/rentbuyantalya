@@ -162,7 +162,7 @@ export default function ApartRentalServicePage({ locale, apartments = [] }: Apar
           <div
             key={apartment.id}
             className="service-card p-0 hover:shadow-lg transition-shadow cursor-pointer"
-            onClick={() => window.location.href = `/${locale}/apart-rental/${apartment.slug || apartment.id}`}
+            onClick={() => window.location.href = `/${locale}/apart-rental/${apartment.slug}`}
           >
               {/* Image */}
               <div className="relative h-48 w-full mb-4 rounded-t-lg overflow-hidden">

@@ -4,7 +4,6 @@ import { useLocale } from 'next-intl';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import AntalyaRentBuyLogo from './AntalyaRentBuyLogo';
 import { useAuth } from '@/contexts/AuthContext';
 
 interface ServiceItem {
@@ -81,13 +80,10 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center">
-            <AntalyaRentBuyLogo 
-              width={160}
-              accent="var(--accent-500)"
-              textColor="var(--dark-text)"
-              background="transparent"
-              showCity={false}
-              className="h-12 w-auto"
+            <img 
+              src="/Rent.png"
+              alt="Rent & Buy Logo"
+              className="h-18 w-auto"
             />
           </Link>
 

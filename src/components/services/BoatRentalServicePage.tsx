@@ -325,7 +325,7 @@ export default function BoatRentalServicePage({ locale, boats = [] }: BoatRental
           >
             {/* Clickable area for boat details */}
             <Link 
-              href={`/${locale}/boat-rental/${boat.slug || boat.id}`}
+              href={`/${locale}/boat-rental/${boat.slug}`}
               className="block cursor-pointer hover:opacity-90 transition-opacity"
             >
               <div className="flex items-center gap-3 mb-4">

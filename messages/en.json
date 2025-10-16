@@ -191,11 +191,65 @@
       "description1": "As RentBuy Antalya, we are an experienced team serving in the tourism sector in Antalya for many years.",
       "description2": "We prioritize our customers' satisfaction by providing reliable solutions in car rental, VIP transfer, boat and villa rental services.",
       "description3": "With our quality service approach and wide vehicle fleet, we aim to create unforgettable vacation experiences."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How can I make a reservation?",
+          "answer": "We provide 24/7 service via WhatsApp. You can reach us at +90 507 156 47 00."
+        },
+        {
+          "question": "How is payment made?",
+          "answer": "Cash, credit card and bank transfer payments are accepted. You can learn the details via WhatsApp."
+        },
+        {
+          "question": "What is the cancellation policy?",
+          "answer": "Cancellation conditions vary according to service type. Please contact us for detailed information."
+        }
+      ],
+      "viewAll": "View all questions"
+    },
+    "blog": {
+      "title": "Blog & News",
+      "subtitle": "Guides, tips and current information about Antalya. Discover our content that will be useful to you.",
+      "all": "All",
+      "featured": "Featured Articles",
+      "noPosts": "No Blog Posts Yet",
+      "noPostsAvailable": "No blog posts available yet.",
+      "noCategoryPosts": "No blog posts in {category} category",
+      "comingSoon": "Useful guides and tips will be here soon. Stay tuned!",
+      "viewAll": "View All Posts",
+      "readTime": "min read",
+      "readMore": "Read More",
+      "posts": [
+        {
+          "title": "Places to Visit in Antalya",
+          "excerpt": "The most beautiful tourist spots in Antalya and travel guide...",
+          "date": "October 15, 2024"
+        },
+        {
+          "title": "Car Rental Tips",
+          "excerpt": "Important points for safe and economical car rental...",
+          "date": "October 10, 2024"
+        },
+        {
+          "title": "Villa Holiday Guide",
+          "excerpt": "Suggestions and tips for an unforgettable villa vacation...",
+          "date": "October 5, 2024"
+        }
+      ]
     }
   },
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Answers to your most common questions",
+    "subtitle": "You can find answers to the most frequently asked questions here. Can't find the question you're looking for? Contact us.",
+    "noFaqsYet": "No FAQs Added Yet",
+    "comingSoon": "You will be able to find frequently asked questions here soon.",
+    "contactTitle": "Do you have other questions?",
+    "contactDescription": "Couldn't find the question you were looking for? Contact our 24/7 customer service.",
+    "whatsappButton": "WhatsApp",
+    "phoneButton": "Phone",
     "items": [
       {
         "question": "How do I make a reservation?",
@@ -221,11 +275,7 @@
         "question": "Which areas does the VIP transfer service cover?",
         "answer": "We offer VIP transfer service from Antalya airport to city center, Kemer, Belek, Side and Alanya regions."
       }
-    ],
-    "contactTitle": "Couldn't find the answer to your question?",
-    "contactDescription": "Contact us, we are happy to help you.",
-    "whatsappButton": "Contact via WhatsApp",
-    "phoneButton": "Call by Phone"
+    ]
   },
   "services": {
     "rentACar": {

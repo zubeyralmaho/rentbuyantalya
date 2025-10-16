@@ -43,35 +43,35 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
       name: 'Ekonomik Segment',
       nameEn: 'Eco Class',
       description: 'Şehir içi ve kısa seyahatler için en uygun fiyatlı araçlar',
-      icon: '💰',
+      icon: '',
     },
     {
       id: 'comfort',
       name: 'Komfort',
       nameEn: 'Comfort Class',
       description: 'Üst düzey konfor ve teknolojiye sahip araçlar',
-      icon: '✨',
+      icon: '',
     },
     {
       id: 'premium',
       name: 'Üst Segment',
       nameEn: 'Premium Class',
       description: 'Lüks ve prestij segmenti',
-      icon: '🏎️',
+      icon: '',
     },
     {
       id: '8-plus-1',
       name: '8+1 Kişilik',
       nameEn: '8+1 Pax',
       description: 'Büyük grup ve aile seyahatleri için geniş araçlar',
-      icon: '🚐',
+      icon: '',
     },
     {
       id: 'atv-jeep',
       name: 'ATV Jeep',
       nameEn: 'ATV Jeep',
       description: 'Macera ve off-road deneyimi için ATV ve Jeep',
-      icon: '🛻',
+      icon: '',
     }
   ];
 
@@ -155,12 +155,15 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
     try {
       setLoading(true);
       setError(null);
-      const qs = segment ? `?segment=${encodeURIComponent(segment)}` : '';
-      const res = await fetch(`/api/listings/rent-a-car${qs}`);
+      const params = new URLSearchParams();
+      params.set('locale', locale);
+      if (segment) params.set('segment', segment);
+      const qs = params.toString() ? `?${params.toString()}` : '';
+      const res = await fetch(`/api/listings/car-rental${qs}`);
       const json = await res.json();
       
       console.log('API Response:', {
-        url: `/api/listings/rent-a-car${qs}`,
+        url: `/api/listings/car-rental${qs}`,
         status: res.status,
         data: json
       });
@@ -219,7 +222,6 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
                 onClick={() => setSelectedSegment(segment.id)}
                 className="bg-white rounded-lg shadow-md p-3 text-center cursor-pointer hover:scale-105 hover:shadow-lg transition-all border border-gray-100"
               >
-                <div className="text-2xl mb-2">{segment.icon}</div>
                 <h4 className="text-sm font-bold mb-1 text-gray-800">
                   {locale === 'en' ? segment.nameEn : segment.name}
                 </h4>
@@ -278,11 +280,10 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
                   : (typeof item.features === 'string' ? [item.features] : []);
 
                 const icon = seg.icon;
-                const itemSlug = item.slug || `car-${item.id.slice(-4)}`;
+                const itemSlug = item.slug;
                 return (
                   <div key={item.id} className="service-card p-6 text-center cursor-pointer hover:scale-105 transition-transform"
                        onClick={() => window.location.href = `/${locale}/car-rental/${itemSlug}`}>
-                      <div className="text-4xl mb-4">{icon}</div>
                     {item.image && (
                       <div className="mb-3">
                         <img src={item.image} alt={item.name} className="w-full h-40 object-cover rounded" />
@@ -347,20 +348,16 @@ export default function CarRentalServicePage({ locale, items }: CarRentalPagePro
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div className="text-white">
-            <div className="text-2xl mb-2">🛡️</div>
-            <p className="text-sm">{t('features.insurance')}</p>
+            <p className="text-sm font-semibold">{t('features.insurance')}</p>
           </div>
           <div className="text-white">
-            <div className="text-2xl mb-2">⛽</div>
-            <p className="text-sm">{t('features.fullTank')}</p>
+            <p className="text-sm font-semibold">{t('features.fullTank')}</p>
           </div>
           <div className="text-white">
-            <div className="text-2xl mb-2">📍</div>
-            <p className="text-sm">{t('features.gps')}</p>
+            <p className="text-sm font-semibold">{t('features.gps')}</p>
           </div>
           <div className="text-white">
-            <div className="text-2xl mb-2">📞</div>
-            <p className="text-sm">{t('features.support')}</p>
+            <p className="text-sm font-semibold">{t('features.support')}</p>
           </div>
         </div>
       </div>

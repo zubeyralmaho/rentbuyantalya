@@ -53,42 +53,42 @@ export default function VillaRentalServicePage({ locale, villas = [] }: VillaRen
       id: 'antalya',
       name: 'Antalya Merkez',
       description: 'Antalya merkez bölgesinde lüks villa kiralama',
-      image: '/services/antalyaboat.jpg',
+      image: '/services/antalyavilla.jpg',
       icon: '🏙️',
     },
     {
       id: 'belek',
       name: 'Belek',
       description: 'Belek\'in golf sahalarına yakın villalar',
-      image: '/services/belekboat.jpg',
+      image: '/services/belekvilla.jpg',
       icon: '⛳',
     },
     {
       id: 'kemer',
       name: 'Kemer',
       description: 'Kemer\'de doğa ile iç içe villa tatili',
-      image: '/services/kemerboat.jpg',
+      image: '/services/kemervilla.jpg',
       icon: '🏔️',
     },
     {
       id: 'kas',
       name: 'Kaş',
       description: 'Kaş\'ın büyülü atmosferinde villa kiralama',
-      image: '/services/kasboat.jpg',
+      image: '/services/kasvilla.jpg',
       icon: '🌊',
     },
     {
       id: 'fethiye',
       name: 'Fethiye',
       description: 'Fethiye\'nin eşsiz manzaralı villaları',
-      image: '/services/fethiyeboat.jpg',
+      image: '/services/fethiyevilla.jpg',
       icon: '⛵',
     },
     {
       id: 'bodrum',
       name: 'Bodrum',
       description: 'Bodrum\'da deniz manzaralı lüks villalar',
-      image: '/services/bodrumboat.jpg',
+      image: '/services/bodrumvilla.jpg',
       icon: '🏛️',
     }
   ];
@@ -362,7 +362,7 @@ export default function VillaRentalServicePage({ locale, villas = [] }: VillaRen
           <div 
             key={villa.id}
             className="service-card p-0 hover:shadow-lg transition-shadow cursor-pointer"
-            onClick={() => window.location.href = `/${locale}/villa-rental/${villa.slug || villa.id}`}
+            onClick={() => window.location.href = `/${locale}/villa-rental/${villa.slug}`}
           >
               {/* Image */}
               <div className="relative h-48 w-full mb-4 rounded-t-lg overflow-hidden">

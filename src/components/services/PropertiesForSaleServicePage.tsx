@@ -167,7 +167,7 @@ export default function PropertiesForSaleServicePage({ locale, properties = [] }
           <div
             key={property.id}
             className="service-card p-0 hover:shadow-lg transition-shadow cursor-pointer"
-            onClick={() => window.location.href = `/${locale}/properties-for-sale/${property.slug || property.id}`}
+            onClick={() => window.location.href = `/${locale}/properties-for-sale/${property.slug}`}
           >
               {/* Image */}
               <div className="relative h-48 w-full mb-4 rounded-t-lg overflow-hidden">

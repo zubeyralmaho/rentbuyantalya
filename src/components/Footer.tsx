@@ -3,7 +3,6 @@
 import { useLocale } from 'next-intl';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import AntalyaRentBuyLogo from './AntalyaRentBuyLogo';
 
 export default function Footer() {
   const locale = useLocale();
@@ -32,12 +31,9 @@ export default function Footer() {
             {/* Brand Section */}
             <div className="lg:col-span-2">
               <div className="mb-6">
-                <AntalyaRentBuyLogo 
-                  width={200}
-                  accent="var(--accent-500)"
-                  textColor="var(--dark-text)"
-                  background="transparent"
-                  showCity={true}
+                <img 
+                  src="/Rent.png"
+                  alt="Rent & Buy Logo"
                   className="h-16 w-auto"
                 />
               </div>

@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { getServicesByLocale, type ServiceListItem } from "@/lib/queries/services";
-import AntalyaRentBuyLogo from "@/components/AntalyaRentBuyLogo";
 import HeroSection from "@/components/HeroSection";
+import CollapsibleSections from "@/components/CollapsibleSections";
 
 type Params = Promise<{ locale: string }>;
 
@@ -169,7 +169,10 @@ export default async function HomePage({ params }: { params: Params }) {
                     src={`/services/${getServiceImage(service.slug, index)}`}
                     alt={service.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className={`object-cover group-hover:scale-105 transition-transform duration-300 ${
+                      service.slug === 'vip-transfer' ? 'object-center' : ''
+                    }`}
+                    style={service.slug === 'vip-transfer' ? { objectPosition: 'center 30%' } : {}}
                     sizes="50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
@@ -187,7 +190,10 @@ export default async function HomePage({ params }: { params: Params }) {
                       src={`/services/${getServiceImage(service.slug, index)}`}
                       alt={service.title}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      className={`object-cover group-hover:scale-105 transition-transform duration-300 ${
+                        service.slug === 'vip-transfer' ? 'object-center' : ''
+                      }`}
+                      style={service.slug === 'vip-transfer' ? { objectPosition: 'center 30%' } : {}}
                       sizes="(max-width: 1200px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -208,25 +214,8 @@ export default async function HomePage({ params }: { params: Params }) {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-8 sm:py-10 lg:py-14" style={{background: 'var(--dark-bg)'}}>
-        <div className="container-custom">
-          <div className="grid gap-8 lg:gap-12 lg:grid-cols-2 items-center">
-            <div className="fade-in">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6" style={{color: 'var(--dark-text)'}}>
-                {t("about.title")}
-              </h2>
-              <div className="space-y-3 sm:space-y-4 text-base sm:text-lg" style={{color: 'var(--dark-text-muted)'}}>
-                <p>{t("about.description1")}</p>
-                <p>{t("about.description2")}</p>
-                <p>{t("about.description3")}</p>
-              </div>
-            </div>
-            
-            
-          </div>
-        </div>
-      </section>
+      {/* Collapsible Sections - About, FAQ, Blog */}
+      <CollapsibleSections locale={locale} />
     </>
   );
 }

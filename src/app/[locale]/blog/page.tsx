@@ -1,12 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { BlogPost, Locale } from '@/types/database';
 import Link from 'next/link';
 
 export default function BlogPage() {
   const locale = useLocale() as Locale;
+  const t = useTranslations('blog');
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState<string[]>([]);
@@ -15,7 +16,7 @@ export default function BlogPage() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch(`/api/blog${selectedCategory ? `?category=${encodeURIComponent(selectedCategory)}` : ''}`);
+        const response = await fetch(`/api/blog?locale=${locale}${selectedCategory ? `&category=${encodeURIComponent(selectedCategory)}` : ''}`);
         if (response.ok) {
           const data = await response.json();
           setPosts(data.posts || []);
@@ -36,7 +37,7 @@ export default function BlogPage() {
     };
 
     fetchPosts();
-  }, [selectedCategory]);
+  }, [selectedCategory, locale]);
 
   const getLocalizedContent = (post: BlogPost, field: 'title' | 'excerpt' | 'content') => {
     const localeField = `${field}_${locale}` as keyof BlogPost;
@@ -77,10 +78,10 @@ export default function BlogPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{color: 'var(--dark-text)'}}>
-            Blog & Rehber
+            {t('title')}
           </h1>
           <p className="text-xl text-center max-w-3xl mx-auto" style={{color: 'var(--dark-text-muted)'}}>
-            Antalya hakkında rehberler, ipuçları ve güncel bilgiler. Size faydalı olacak içeriklerimizi keşfedin.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -96,7 +97,7 @@ export default function BlogPage() {
                     : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
                 }`}
               >
-                Tümü
+                {t('all')}
               </button>
               {categories.map((category) => (
                 <button
@@ -120,17 +121,17 @@ export default function BlogPage() {
           <div className="text-center py-12">
             <div className="text-6xl mb-4">📝</div>
             <h3 className="text-2xl font-bold mb-4" style={{color: 'var(--dark-text)'}}>
-              {selectedCategory ? `${selectedCategory} kategorisinde blog yazısı yok` : 'Henüz Blog Yazısı Yok'}
+              {selectedCategory ? t('noCategoryPosts', { category: selectedCategory }) : t('noPosts')}
             </h3>
             <p style={{color: 'var(--dark-text-muted)'}}>
-              Yakında faydalı rehberler ve ipuçları burada yer alacak. Takipte kalın!
+              {t('comingSoon')}
             </p>
             {selectedCategory && (
               <button
                 onClick={() => setSelectedCategory('')}
                 className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
               >
-                Tüm Yazıları Gör
+                {t('viewAll')}
               </button>
             )}
           </div>
@@ -140,7 +141,7 @@ export default function BlogPage() {
             {posts.filter(post => post.featured).length > 0 && (
               <div className="mb-16">
                 <h2 className="text-2xl font-bold mb-8" style={{color: 'var(--dark-text)'}}>
-                  Öne Çıkan Yazılar
+                  {t('featured')}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-8">
                   {posts.filter(post => post.featured).slice(0, 2).map((post) => (
@@ -180,7 +181,7 @@ export default function BlogPage() {
                           )}
                           <span>{formatDate(post.created_at)}</span>
                           <span className="mx-2">•</span>
-                          <span>{calculateReadTime(getLocalizedContent(post, 'content'))} dk okuma</span>
+                          <span>{calculateReadTime(getLocalizedContent(post, 'content'))} {t('readTime')}</span>
                         </div>
 
                         {/* Title */}
@@ -197,7 +198,7 @@ export default function BlogPage() {
 
                         {/* Read More */}
                         <div className="mt-4 flex items-center text-sm font-medium" style={{color: 'var(--accent-500)'}}>
-                          Devamını Oku
+                          {t('readMore')}
                           <svg className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                           </svg>

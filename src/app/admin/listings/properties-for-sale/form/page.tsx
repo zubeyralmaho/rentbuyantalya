@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
@@ -46,10 +46,10 @@ interface PropertyFormData {
 }
 
 const LOCALES = [
-  { code: 'tr', name: 'TÃ¼rkÃ§e' },
+  { code: 'tr', name: 'Türkçe' },
   { code: 'en', name: 'English' },
-  { code: 'ru', name: 'Ğ ÑƒÑÑĞºĞ¸Ğ¹' },
-  { code: 'ar', name: 'Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©' }
+  { code: 'ru', name: 'Русский' },
+  { code: 'ar', name: 'العربية' }
 ];
 
 const PROPERTY_FEATURES = [
@@ -275,20 +275,20 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
   return (
     <div className="property-form-container">
       <div className="form-header">
-        <h1>{isEdit ? 'Emlak Ä°lanÄ±nÄ± DÃ¼zenle' : 'Yeni Emlak Ä°lanÄ± Ekle'}</h1>
+        <h1>{isEdit ? 'Emlak İlanını Düzenle' : 'Yeni Emlak İlanı Ekle'}</h1>
         <button
           type="button"
           onClick={() => router.push('/admin/listings/properties-for-sale')}
           className="back-button"
         >
-          â† Geri DÃ¶n
+          ← Geri Dön
         </button>
       </div>
 
       <form onSubmit={handleSubmit} className="property-form">
         {/* Translation Tabs */}
         <div className="translation-section">
-          <h3>Ä°lan Bilgileri</h3>
+          <h3>İlan Bilgileri</h3>
           <div className="tab-buttons">
             {LOCALES.map(locale => (
               <button
@@ -344,7 +344,7 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
             </div>
 
             <div className="form-group">
-              <label>Alan (mÂ²)</label>
+              <label>Alan (m²)</label>
               <input
                 type="number"
                 value={formData.metadata.area}
@@ -487,18 +487,18 @@ function PropertyListingForm({ editId }: { editId?: string | null }) {
                 if (typeof value !== 'boolean') return null;
                 
                 const labels: { [key: string]: string } = {
-                  furnished: 'EÅŸyalÄ±',
+                  furnished: 'Eşyalı',
                   parking: 'Otopark',
-                  garden: 'BahÃ§e',
+                  garden: 'Bahçe',
                   pool: 'Havuz',
-                  seaView: 'Deniz ManzarasÄ±',
+                  seaView: 'Deniz Manzarası',
                   balcony: 'Balkon',
-                  elevator: 'AsansÃ¶r',
+                  elevator: 'Asansör',
                   airConditioning: 'Klima',
                   heating: 'Kalorifer',
-                  fireplace: 'ÅÃ¶mine',
-                  security: 'GÃ¼venlik',
-                  generator: 'JeneratÃ¶r'
+                  fireplace: 'Şömine',
+                  security: 'Güvenlik',
+                  generator: 'Jeneratör'
                 };
 
                 return (
